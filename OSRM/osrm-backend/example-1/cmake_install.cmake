@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/arnaud/Bureau/PDM/OSRM/Master-Thesis/OSRM/osrm-backend/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/arnaud/Bureau/PDM/OSRM/Master-Thesis/OSRM/osrm-backend/example-1/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

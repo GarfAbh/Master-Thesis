@@ -1,2 +1,8 @@
 # Master-Thesis
-This is the repository of my master thesis at EPFL
+This is the repository of my master thesis at EPFL.
+
+# Problem
+
+# Specifications
+
+#

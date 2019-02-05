@@ -12,4 +12,23 @@ I chated with some dev from OSRM developement team about that on <https://webcha
 
 They are really cool and kindly answer to me but there is no solution at this point. I will then code my own test file to explore how the tool work.
 
-# Dev tool
+Finally Found how to get this osrm-exampl executable. I'll develop a script to make a whole installation of osrm until having the osrm-example executable while I'm home.
+
+### Relevant Link :
+
+To download data from osm : <http://download.geofabrik.de/europe.html>
+
+My github repo : <https://github.com/GarfAbh/Master-Thesis/>
+
+OSRM repo : <https://github.com/Project-OSRM/osrm-backend>
+
+OSRM API : <http://project-osrm.org/docs/v5.5.1/api/#routestep-object>
+
+### Dev tool
+
+For test and Developement at the moment I use Atom. No package for the moment.
+Language : C++
+
+# Day 2
+
+I need data to use the executable so first dl the convertor by simply : `sudo apt install osmctools`

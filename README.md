@@ -4,7 +4,9 @@ This is the repository of my master thesis at EPFL.
 
 # Problem
 
+This is an optimization problem.
 
+You have to optimize the delivery system for a fleet of truck starting from A going to B through some stop points. All the stop points has to be delivered during the day.
 
 # Specifications
 
@@ -22,7 +24,7 @@ This is the repository of my master thesis at EPFL.
 
 ### Step 2
 
--   Develope the routing management system
+-   Developing the routing management system
 -   From A to B with multiple inside points
 -   Time management
 

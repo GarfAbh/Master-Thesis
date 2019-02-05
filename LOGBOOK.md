@@ -1,7 +1,7 @@
 # Description
 
 This is the logbook of my master thesis.
-I will here describe all the step i followed during the whole project. The interrogation the solution I found how and why. the idea is to be able to reconstruct the whole process of the project i've made.
+I will here describe all the step I followed during the whole project. The interrogation the solution I found how and why. the idea is to be able to reconstruct the whole process of the project I've made.
 
 # Day 1
 

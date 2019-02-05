@@ -43,6 +43,10 @@ This is the repository of my master thesis at EPFL.
 -   Integration in the intern soft
 -   Integration of the routing in the GPS
 
+# Organization
+
+![organizational graph of the project](https://github.com/GarfAbh/Master-Thesis/blob/master/Documentation/Image/Master_Thesis_Organizational_Graph.jpg)
+
 # Instalation
 
 Download the repository. Then go to the source folder and just run the instalation script. It will directly build the project, dowload the data, run the example executable.

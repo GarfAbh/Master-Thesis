@@ -46,3 +46,8 @@ This is the repository of my master thesis at EPFL.
 # Instalation
 
 Download the repository. Then go to the source folder and just run the instalation script. It will directly build the project, dowload the data, run the example executable.
+
+this could take several minutes as OSRM is huge to build.
+
+basicaly clone the repo then run :
+`./instalation-script.sh`

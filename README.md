@@ -42,3 +42,7 @@ This is the repository of my master thesis at EPFL.
 
 -   Integration in the intern soft
 -   Integration of the routing in the GPS
+
+# Instalation
+
+Download the repository. Then go to the source folder and just run the instalation script. It will directly build the project, dowload the data, run the example executable.

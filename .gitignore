@@ -1,1 +1,6 @@
+
+#to ignore the data related to the project as they are heavy#
 data/
+
+#to ignore the example-1 folder which is not important and allow to test entirely the instalation-script#
+OSRM/osrm-backend/example-1/

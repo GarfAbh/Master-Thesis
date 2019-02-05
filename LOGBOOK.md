@@ -32,3 +32,21 @@ Language : C++
 # Day 2
 
 I need data to use the executable so first dl the convertor by simply : `sudo apt install osmctools`
+
+To do the conversion :
+`osmconvert youfile.itextension >yourfile.thenewextension`
+
+in fact I discover that OSRM provide already converter tool to get osrm data exactly as they need. So i'll use it instead.
+
+Keep in mind that data are not present in my repo as they are too large to be in it. My instalation script would also create the folder data at the good place and dl the data for you and convert it at the good needed format
+
+The wiki how has one of the step describe not working. If you get the error : "Profile profiles/car.lua not found"  (probably when runing the extract )then you have to give the path to the car.lua profile to the execution file.
+
+solutions : osrm-extract path/to/my-map.osm.pbf -p path/to/car.lua
+
+I have a total runing system now i know which command do what and how it works well (at least for the begining). I'll develop the script for a whole installation and running of the example this afternoon. Next step is to identify what part of the osrm are relevant for our project.
+
+After that being done, think about the next step and what's the relevant part to do.
+
+### Relevant link :
+<https://github.com/Project-OSRM/osrm-backend/wiki/Running-OSRM>

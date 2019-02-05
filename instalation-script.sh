@@ -47,4 +47,4 @@ echo
 echo example runs and output is : ==============================================
 echo
 ./OSRM/osrm-backend/example-1/osrm-example data/monaco/monaco-latest.osrm
-echo 
+echo

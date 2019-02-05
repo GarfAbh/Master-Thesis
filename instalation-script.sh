@@ -11,8 +11,10 @@ if [ -e data/monaco/monaco-latest.osm.pbf ]; then
   echo needed data and folder already exist.
 else
   echo data folder creation + fil it up with the monaco data from geofabrik
-  mkdir data/monaco
-  cd data/monaco
+  mkdir data
+  cd data
+  mkdir monaco
+  cd monaco
   wget http://download.geofabrik.de/europe/monaco-latest.osm.pbf
   cd ../..
 fi

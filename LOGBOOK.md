@@ -50,5 +50,7 @@ After that being done, think about the next step and what's the relevant part to
 
 The script is done and work perfectly well some improvement are possible (TODO). But at this point now i have to familiarize my self with the code it self and find how i can provide my own code runing what i need using OSRM. After that check if some other tool for some other needed objectives exist or not.
 
+creation of an organizational graph on latex to have a better representation of the repo + differentiation between data, source code, tool ...
+
 ### Relevant link :
 <https://github.com/Project-OSRM/osrm-backend/wiki/Running-OSRM>

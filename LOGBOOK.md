@@ -52,5 +52,7 @@ The script is done and work perfectly well some improvement are possible (TODO).
 
 creation of an organizational graph on latex to have a better representation of the repo + differentiation between data, source code, tool ...
 
+![organizational graph of the project](https://github.com/GarfAbh/Master-Thesis/blob/master/Documentation/Image/Master_Thesis_Organizational_Graph.pdf)
+
 ### Relevant link :
 <https://github.com/Project-OSRM/osrm-backend/wiki/Running-OSRM>

@@ -48,5 +48,7 @@ I have a total runing system now i know which command do what and how it works w
 
 After that being done, think about the next step and what's the relevant part to do.
 
+The script is done and work perfectly well some improvement are possible (TODO). But at this point now i have to familiarize my self with the code it self and find how i can provide my own code runing what i need using OSRM. After that check if some other tool for some other needed objectives exist or not.
+
 ### Relevant link :
 <https://github.com/Project-OSRM/osrm-backend/wiki/Running-OSRM>

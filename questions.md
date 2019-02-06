@@ -11,4 +11,6 @@ Jusqu'a maintenant je travail sur le repo de OSRM que j'ai fork. Mais cela ne me
 Mon architecture du code est disponible dans mon dossier src. Est ce qu'il vous semble bien et clair ou au contraire au regard de ce qui devrais arriver par la suite il faudrais changer quelque peu ?
 
 ### Question 4
-Je trouve aucune information sur multi level Dijkstra j'ai l'impression qu'il s'agit de run dijkstra sur plusieurs niveau de route mais je trouve rien de relevant à ce sujet. Cependant j'ai trouver et comprend comment fonctionnais CH (Contraction Hierarchies) ca à l'air très très efficace (voir mieux que Dijkstra) ce qui est plutot cool dans l'idée faudras faire un benchmark. En revanche c'est pas ultra clair la distinction entre les deux au niveau de OSRM est que vous en savez plus ou pas ? 
+Je trouve aucune information sur multi level Dijkstra j'ai l'impression qu'il s'agit de run dijkstra sur plusieurs niveau de route mais je trouve rien de relevant à ce sujet. Cependant j'ai trouver et comprend comment fonctionnais CH (Contraction Hierarchies) ca à l'air très très efficace (voir mieux que Dijkstra) ce qui est plutot cool dans l'idée faudras faire un benchmark. En revanche c'est pas ultra clair la distinction entre les deux au niveau de OSRM est-ce que vous en savez plus ou pas ?
+
+### Question 5

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd ..
+
 # dependancies instalation :
 sudo apt install build-essential git cmake pkg-config \
 libbz2-dev libxml2-dev libzip-dev libboost-all-dev \

@@ -56,4 +56,4 @@ Download the repository. Then go to the source folder and just run the instalati
 this could take several minutes as OSRM is huge to build.
 
 basicaly clone the repo then run :
-`./instalation-script.sh`
+`./osrm-script.sh`

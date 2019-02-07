@@ -14,3 +14,8 @@ Mon architecture du code est disponible dans mon dossier src. Est ce qu'il vous 
 Je trouve aucune information sur multi level Dijkstra j'ai l'impression qu'il s'agit de run dijkstra sur plusieurs niveau de route mais je trouve rien de relevant à ce sujet. Cependant j'ai trouver et comprend comment fonctionnais CH (Contraction Hierarchies) ca à l'air très très efficace (voir mieux que Dijkstra) ce qui est plutot cool dans l'idée faudras faire un benchmark. En revanche c'est pas ultra clair la distinction entre les deux au niveau de OSRM est-ce que vous en savez plus ou pas ?
 
 ### Question 5
+
+Quel langue pourrions nous préconiser le plus ?
+Contrainte du choix du language : performance pour ce que l'on veut faire. Environnement de dévelopement adapté et efficace.
+S'adapte bien au différent outils que l'on prend en compte.
+Pour le moment : C++ et Java sont (OSRM est en C++ et graphhopper est en java.)

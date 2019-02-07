@@ -1,7 +1,7 @@
 # Description
 
 This is the logbook of my master thesis.
-I will here describe all the step i followed during the whole project. The interrogation the solution I found how and why. the idea is to be able to reconstruct the whole process of the project i've made.
+I will here describe all the step I followed during the whole project. The interrogation the solution I found how and why. the idea is to be able to reconstruct the whole process of the project I've made.
 
 # Day 1
 
@@ -50,5 +50,20 @@ After that being done, think about the next step and what's the relevant part to
 
 The script is done and work perfectly well some improvement are possible (TODO). But at this point now i have to familiarize my self with the code it self and find how i can provide my own code runing what i need using OSRM. After that check if some other tool for some other needed objectives exist or not.
 
+creation of an organizational graph on latex to have a better representation of the repo + differentiation between data, source code, tool ...
+
+![organizational graph of the project](https://github.com/GarfAbh/Master-Thesis/blob/master/Documentation/Image/Master_Thesis_Organizational_Graph.jpg)
+
 ### Relevant link :
 <https://github.com/Project-OSRM/osrm-backend/wiki/Running-OSRM>
+
+
+# Day 3
+
+I started the day with the thinking of my futur code architecture. The idea is to first have a clear code architecture to not struggles at some point where you have multiple piece of code and you don't know where to put what. I also tried to do a makefile and a kind of test file to use osrm. Issue : we cannot use makefile ase easy as i thought for that kind of project I documment then my self on Cmake (already use for osrm building ...). I also checked documentation on the algorithms used by osrm to have a better understanding of the tool. Unfortunately MLD(Multiple Level Dijkstra) has not really documentation on the web. I'll figure out what is really and how it works. I found some CH (Contraction Hierarchies) documentation. The best example found is on the french wikipedia page (available in the relevant link of the day).
+
+
+
+### Relevant link :
+
+French wikipedia page for CH : <https://fr.wikipedia.org/wiki/Contractions_hi%C3%A9rarchiques>

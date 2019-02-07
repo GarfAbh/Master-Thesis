@@ -196,11 +196,6 @@ public class RealtimeFeed {
             }
 
             @Override
-            public int getEdges() {
-                return getAllEdges().length();
-            }
-
-            @Override
             public NodeAccess getNodeAccess() {
                 return nodeAccess;
             }
@@ -324,7 +319,7 @@ public class RealtimeFeed {
                 }
 
                 @Override
-                public Map<Integer, PlatformDescriptor> getRoutes() {
+                public Map<Integer, String> getRoutes() {
                     return staticGtfs.getRoutes();
                 }
             };
@@ -332,7 +327,7 @@ public class RealtimeFeed {
             Instant timestamp = Instant.ofEpochSecond(feedMessage.getHeader().getTimestamp());
             LocalDate dateToChange = timestamp.atZone(timezone).toLocalDate(); //FIXME
             BitSet validOnDay = new BitSet();
-            LocalDate startDate = feed.getStartDate();
+            LocalDate startDate = feed.calculateStats().getStartDate();
             validOnDay.set((int) DAYS.between(startDate, dateToChange));
             feedMessage.getEntityList().stream()
                     .filter(GtfsRealtime.FeedEntity::hasTripUpdate)
@@ -397,7 +392,7 @@ public class RealtimeFeed {
                         GtfsReader.TripWithStopTimes tripWithStopTimes = new GtfsReader.TripWithStopTimes(trip, stopTimes, validOnDay, Collections.emptySet(), Collections.emptySet());
                         gtfsReader.addTrip(timezone, 0, new ArrayList<>(), tripWithStopTimes, tripUpdate.getTrip(), false);
                     });
-            gtfsReader.wireUpAdditionalDeparturesAndArrivals(timezone);
+            gtfsReader.wireUpAdditionalDepartures(timezone);
         });
 
         return new RealtimeFeed(staticGtfs, feedMessages, blockedEdges, delaysForBoardEdges, delaysForAlightEdges, additionalEdges, tripDescriptors, stopSequences, operatingDayPatterns, writableTimeZones);

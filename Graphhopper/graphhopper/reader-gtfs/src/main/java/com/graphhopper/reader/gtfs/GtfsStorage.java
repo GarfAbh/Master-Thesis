@@ -26,18 +26,14 @@ import com.graphhopper.gtfs.fare.FixedFareAttributeLoader;
 import com.graphhopper.storage.Directory;
 import com.graphhopper.storage.Graph;
 import com.graphhopper.storage.GraphExtension;
-import org.mapdb.Bind;
-import org.mapdb.DB;
-import org.mapdb.DBMaker;
-import org.mapdb.HTreeMap;
+import org.mapdb.*;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.Serializable;
-import java.nio.file.Files;
+import java.io.*;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.nio.file.Files;
 import java.util.*;
+import java.util.concurrent.ExecutionException;
 import java.util.zip.ZipFile;
 
 public class GtfsStorage implements GraphExtension, GtfsStorageI {
@@ -100,7 +96,7 @@ public class GtfsStorage implements GraphExtension, GtfsStorageI {
 	private Map<Integer, byte[]> tripDescriptors;
 	private Map<Integer, Integer> stopSequences;
 
-	private Map<Integer, PlatformDescriptor> routes;
+	private Map<Integer, String> routes;
 
 	private Map<String, Fare> fares;
 	private Map<String, int[]> boardEdgesForTrip;
@@ -108,7 +104,7 @@ public class GtfsStorage implements GraphExtension, GtfsStorageI {
 
 	private Map<String, Integer> stationNodes;
 
-	public enum EdgeType {
+	enum EdgeType {
 		HIGHWAY, ENTER_TIME_EXPANDED_NETWORK, LEAVE_TIME_EXPANDED_NETWORK, ENTER_PT, EXIT_PT, HOP, DWELL, BOARD, ALIGHT, OVERNIGHT, TRANSFER, WAIT, WAIT_ARRIVAL
     }
 
@@ -154,9 +150,13 @@ public class GtfsStorage implements GraphExtension, GtfsStorageI {
 		this.data = DBMaker.newFileDB(new File(dir.getLocation() + "/transit_schedule")).transactionDisable().mmapFileEnable().readOnly().make();
 		init();
 		for (String gtfsFeedId : this.gtfsFeedIds) {
-			GTFSFeed feed = new GTFSFeed(new File(dir.getLocation() + "/" + gtfsFeedId));
-			this.gtfsFeeds.put(gtfsFeedId, feed);
-			this.transfers.put(gtfsFeedId, new Transfers(feed));
+			try {
+				GTFSFeed feed = new GTFSFeed(dir.getLocation() + "/" + gtfsFeedId);
+				this.gtfsFeeds.put(gtfsFeedId, feed);
+				this.transfers.put(gtfsFeedId, new Transfers(feed));
+			} catch (IOException | ExecutionException e) {
+				throw new RuntimeException(e);
+			}
 		}
 		return true;
 	}
@@ -194,14 +194,12 @@ public class GtfsStorage implements GraphExtension, GtfsStorageI {
 	}
 
 	void loadGtfsFromFile(String id, ZipFile zip) {
-		File file = new File(dir.getLocation() + "/" + id);
 		try {
-			Files.deleteIfExists(file.toPath());
-			GTFSFeed feed = new GTFSFeed(file);
-			feed.loadFromFileAndLogErrors(zip);
+			GTFSFeed feed = new GTFSFeed(dir.getLocation() + "/" + id);
+			feed.loadFromFile(zip);
 			fixFares(feed, zip);
 			this.gtfsFeeds.put(id, feed);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 		this.gtfsFeedIds.add(id);
@@ -279,7 +277,7 @@ public class GtfsStorage implements GraphExtension, GtfsStorageI {
 	}
 
     @Override
-    public Map<Integer, PlatformDescriptor> getRoutes() {
+    public Map<Integer, String> getRoutes() {
         return routes;
     }
 

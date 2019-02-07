@@ -30,9 +30,9 @@ import com.graphhopper.util.shapes.BBox;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Locale;
-
 import static com.graphhopper.util.Helper.nf;
+
+import java.util.Locale;
 
 /**
  * The base graph handles nodes and edges file format. It can be used with different Directory
@@ -94,8 +94,8 @@ class BaseGraph implements Graph {
         this.bitUtil = BitUtil.get(dir.getByteOrder());
         this.wayGeometry = dir.find("geometry");
         this.nameIndex = new NameIndex(dir);
-        this.nodes = dir.find("nodes", DAType.getPreferredInt(dir.getDefaultType()));
-        this.edges = dir.find("edges", DAType.getPreferredInt(dir.getDefaultType()));
+        this.nodes = dir.find("nodes");
+        this.edges = dir.find("edges");
         this.listener = listener;
         this.edgeAccess = new EdgeAccess(edges, bitUtil) {
             @Override
@@ -311,11 +311,6 @@ class BaseGraph implements Graph {
     @Override
     public int getNodes() {
         return nodeCount;
-    }
-
-    @Override
-    public int getEdges() {
-        return getAllEdges().length();
     }
 
     @Override
@@ -947,16 +942,14 @@ class BaseGraph implements Graph {
             this.nextEdgeId = this.edgeId = edgeId;
         }
 
-        /**
-         * @return false if the edge has not a node equal to expectedAdjNode
-         */
         final boolean init(int tmpEdgeId, int expectedAdjNode) {
             setEdgeId(tmpEdgeId);
-            if (!EdgeIterator.Edge.isValid(edgeId))
-                throw new IllegalArgumentException("fetching the edge requires a valid edgeId but was " + edgeId);
+            if (tmpEdgeId != EdgeIterator.NO_EDGE) {
+                selectEdgeAccess();
+                this.edgePointer = edgeAccess.toPointer(tmpEdgeId);
+            }
 
-            selectEdgeAccess();
-            edgePointer = edgeAccess.toPointer(tmpEdgeId);
+            // expect only edgePointer is properly initialized via setEdgeId            
             baseNode = edgeAccess.edges.getInt(edgePointer + edgeAccess.E_NODEA);
             if (baseNode == EdgeAccess.NO_NODE)
                 throw new IllegalStateException("content of edgeId " + edgeId + " is marked as invalid - ie. the edge is already removed!");
@@ -1001,13 +994,10 @@ class BaseGraph implements Graph {
                 edgePointer = edgeAccess.toPointer(nextEdgeId);
                 edgeId = nextEdgeId;
                 adjNode = edgeAccess.getOtherNode(baseNode, edgePointer);
+                reverse = baseNode > adjNode;
                 freshFlags = false;
 
-                // this does not properly work as reverse can be true from a previous edge state
-                // if (baseNode == adjNode && !reverse) reverse = true; else
-
-                reverse = baseNode > adjNode;
-                // position to next edge
+                // position to next edge                
                 nextEdgeId = edgeAccess.getEdgeRef(baseNode, adjNode, edgePointer);
                 assert nextEdgeId != edgeId : ("endless loop detected for base node: " + baseNode + ", adj node: " + adjNode
                         + ", edge pointer: " + edgePointer + ", edge: " + edgeId);
@@ -1207,16 +1197,6 @@ class BaseGraph implements Graph {
         @Override
         public int getEdge() {
             return edgeId;
-        }
-
-        @Override
-        public int getOrigEdgeFirst() {
-            return getEdge();
-        }
-
-        @Override
-        public int getOrigEdgeLast() {
-            return getEdge();
         }
 
         @Override

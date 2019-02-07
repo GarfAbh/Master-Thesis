@@ -72,12 +72,14 @@ public class TurnWeighting implements Weighting {
         if (prevOrNextEdgeId == EdgeIterator.NO_EDGE)
             return weight;
 
-        final int origEdgeId = reverse ? edgeState.getOrigEdgeLast() : edgeState.getOrigEdgeFirst();
-        double turnCosts = reverse ?
-                calcTurnWeight(origEdgeId, edgeState.getBaseNode(), prevOrNextEdgeId) :
-                calcTurnWeight(prevOrNextEdgeId, edgeState.getBaseNode(), origEdgeId);
+        int edgeId = edgeState.getEdge();
+        double turnCosts;
+        if (reverse)
+            turnCosts = calcTurnWeight(edgeId, edgeState.getBaseNode(), prevOrNextEdgeId);
+        else
+            turnCosts = calcTurnWeight(prevOrNextEdgeId, edgeState.getBaseNode(), edgeId);
 
-        if (turnCosts == 0 && origEdgeId == prevOrNextEdgeId)
+        if (turnCosts == 0 && edgeId == prevOrNextEdgeId)
             return weight + defaultUTurnCost;
 
         return weight + turnCosts;

@@ -57,11 +57,6 @@ public class WrapperGraph implements Graph {
     }
 
     @Override
-    public int getEdges() {
-        return getAllEdges().length();
-    }
-
-    @Override
     public NodeAccess getNodeAccess() {
         return baseGraph.getNodeAccess();
     }
@@ -94,7 +89,7 @@ public class WrapperGraph implements Graph {
                 return IntStream.concat(
                         IntStream.of(baseGraph.getAllEdges().length() - 1),
                         extraEdges.stream().mapToInt(VirtualEdgeIteratorState::getEdge))
-                        .max().getAsInt()+1;
+                        .max().getAsInt();
             }
 
             @Override
@@ -105,16 +100,6 @@ public class WrapperGraph implements Graph {
             @Override
             public int getEdge() {
                 throw new UnsupportedOperationException();
-            }
-
-            @Override
-            public int getOrigEdgeFirst() {
-                return getEdge();
-            }
-
-            @Override
-            public int getOrigEdgeLast() {
-                return getEdge();
             }
 
             @Override

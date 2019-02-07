@@ -401,7 +401,9 @@ public class EncodingManager {
      * The returned list is never empty.
      */
     public List<FlagEncoder> fetchEdgeEncoders() {
-        return new ArrayList<FlagEncoder>(edgeEncoders);
+        List<FlagEncoder> list = new ArrayList<>();
+        list.addAll(edgeEncoders);
+        return list;
     }
 
     public boolean needsTurnCostsSupport() {

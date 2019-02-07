@@ -26,7 +26,7 @@ import com.graphhopper.storage.*;
 import com.graphhopper.util.CHEdgeIteratorState;
 import com.graphhopper.util.EdgeIterator;
 import com.graphhopper.util.EdgeIteratorState;
-import com.graphhopper.util.PMap;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -43,9 +43,15 @@ public class NodeBasedNodeContractorTest {
     private final GraphHopperStorage graph = new GraphBuilder(encodingManager).setCHGraph(weighting).create();
     private final CHGraph lg = graph.getGraph(CHGraph.class);
     private final TraversalMode traversalMode = TraversalMode.NODE_BASED;
+    private Directory dir;
+
+    @Before
+    public void setUp() {
+        dir = new GHDirectory("", DAType.RAM_INT);
+    }
 
     private NodeContractor createNodeContractor() {
-        NodeContractor nodeContractor = new NodeBasedNodeContractor(lg, weighting, new PMap());
+        NodeContractor nodeContractor = new NodeBasedNodeContractor(dir, graph, lg, weighting);
         nodeContractor.initFromGraph();
         nodeContractor.prepareContraction();
         return nodeContractor;

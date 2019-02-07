@@ -6,11 +6,13 @@ var mapLayer = require('./map.js');
 var dataToHtml = function (data, query) {
     var element = "";
     if (data.name) {
-        var name = data.name;
+        element += "<div class='nameseg'>" + formatTools.formatValue(data.name, query) + "</div>";
+    } else if (data.street) {
+        var streetStr = data.street;
         if (data.housenumber)
-            name = formatTools.insComma(name, data.housenumber);
+            streetStr = formatTools.insComma(streetStr, data.housenumber);
 
-        element += "<div class='nameseg'>" + formatTools.formatValue(name, query) + "</div>";
+        element += "<div class='nameseg'>" + formatTools.formatValue(streetStr, query) + "</div>";
     }
 
     var addStr = "";
@@ -157,6 +159,15 @@ AutoComplete.prototype.showListForIndex = function (ghRequest, routeIfAllResolve
     };
 
     myAutoDiv.autocomplete(options);
+
+    // with the following more stable code we cannot click on suggestions any longer
+//    $("#" + fromOrTo + "Input").focusout(function() {
+//        myAutoDiv.autocomplete().disable();
+//        myAutoDiv.autocomplete().hide();
+//    });
+//    $("#" + fromOrTo + "Input").focusin(function() {
+//        myAutoDiv.autocomplete().enable();
+//    });
 };
 
 AutoComplete.prototype.createStub = function () {

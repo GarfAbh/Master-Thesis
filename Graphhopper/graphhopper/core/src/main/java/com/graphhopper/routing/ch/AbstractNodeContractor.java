@@ -20,11 +20,16 @@ package com.graphhopper.routing.ch;
 
 import com.graphhopper.routing.util.DefaultEdgeFilter;
 import com.graphhopper.routing.util.FlagEncoder;
+import com.graphhopper.routing.weighting.AbstractWeighting;
 import com.graphhopper.routing.weighting.Weighting;
-import com.graphhopper.storage.*;
+import com.graphhopper.storage.CHGraph;
+import com.graphhopper.storage.DataAccess;
+import com.graphhopper.storage.Directory;
+import com.graphhopper.storage.GraphHopperStorage;
 import com.graphhopper.util.CHEdgeExplorer;
 
 abstract class AbstractNodeContractor implements NodeContractor {
+    private final GraphHopperStorage ghStorage;
     final CHGraph prepareGraph;
     final FlagEncoder encoder;
     CHEdgeExplorer inEdgeExplorer;
@@ -33,10 +38,11 @@ abstract class AbstractNodeContractor implements NodeContractor {
     int maxLevel;
     private int maxEdgesCount;
 
-    public AbstractNodeContractor(CHGraph prepareGraph, Weighting weighting) {
+    public AbstractNodeContractor(Directory dir, GraphHopperStorage ghStorage, CHGraph prepareGraph, Weighting weighting) {
+        this.ghStorage = ghStorage;
         this.prepareGraph = prepareGraph;
         this.encoder = weighting.getFlagEncoder();
-        originalEdges = new GHDirectory("", DAType.RAM_INT).find("");
+        originalEdges = dir.find("original_edges_" + AbstractWeighting.weightingToFileName(weighting));
         originalEdges.create(1000);
     }
 
@@ -45,7 +51,7 @@ abstract class AbstractNodeContractor implements NodeContractor {
         inEdgeExplorer = prepareGraph.createEdgeExplorer(DefaultEdgeFilter.inEdges(encoder));
         outEdgeExplorer = prepareGraph.createEdgeExplorer(DefaultEdgeFilter.outEdges(encoder));
         maxLevel = prepareGraph.getNodes();
-        maxEdgesCount = prepareGraph.getOriginalEdges();
+        maxEdgesCount = ghStorage.getAllEdges().length();
     }
 
     @Override
@@ -64,7 +70,7 @@ abstract class AbstractNodeContractor implements NodeContractor {
             if (value != 1)
                 throw new IllegalStateException("Trying to set original edge count for normal edge to a value = " + value
                         + ", edge:" + (edgeId + maxEdgesCount) + ", max:" + maxEdgesCount + ", graph.max:" +
-                        prepareGraph.getEdges());
+                        prepareGraph.getAllEdges().length());
             return;
         }
 
@@ -82,6 +88,4 @@ abstract class AbstractNodeContractor implements NodeContractor {
         originalEdges.ensureCapacity(tmp + 4);
         return originalEdges.getInt(tmp);
     }
-
-    abstract boolean isEdgeBased();
 }

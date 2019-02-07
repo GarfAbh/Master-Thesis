@@ -34,7 +34,7 @@ public class PMap {
     }
 
     public PMap(int capacity) {
-        this(new HashMap<>(capacity));
+        this(new HashMap<String, String>(capacity));
     }
 
     public PMap(Map<String, String> map) {
@@ -122,17 +122,6 @@ public class PMap {
         if (!Helper.isEmpty(str)) {
             try {
                 return Double.parseDouble(str);
-            } catch (Exception ex) {
-            }
-        }
-        return _default;
-    }
-
-    public float getFloat(String key, float _default) {
-        String str = get(key);
-        if (!Helper.isEmpty(str)) {
-            try {
-                return Float.parseFloat(str);
             } catch (Exception ex) {
             }
         }

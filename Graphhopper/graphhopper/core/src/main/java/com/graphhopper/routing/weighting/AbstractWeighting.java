@@ -42,9 +42,7 @@ public abstract class AbstractWeighting implements Weighting {
         long flags = edgeState.getFlags();
         if (reverse && !flagEncoder.isBackward(flags)
                 || !reverse && !flagEncoder.isForward(flags))
-            throw new IllegalStateException("Calculating time should not require to read speed from edge in wrong direction. " +
-                    "(" + edgeState.getBaseNode() + " - " + edgeState.getAdjNode() + ") "
-                    + edgeState.fetchWayGeometry(3) + " " + edgeState.getDistance() + " "
+            throw new IllegalStateException("Calculating time should not require to read speed from edge in wrong direction. "
                     + "Reverse:" + reverse + ", fwd:" + flagEncoder.isForward(flags) + ", bwd:" + flagEncoder.isBackward(flags));
 
         double speed = reverse ? flagEncoder.getReverseSpeed(flags) : flagEncoder.getSpeed(flags);
@@ -94,8 +92,8 @@ public abstract class AbstractWeighting implements Weighting {
     /**
      * Replaces all characters which are not numbers, characters or underscores with underscores
      */
-    public static String weightingToFileName(Weighting w, boolean edgeBased) {
-        return toLowerCase(w.toString()).replaceAll("\\|", "_") + (edgeBased ? "_edge" : "_node");
+    public static String weightingToFileName(Weighting w) {
+        return toLowerCase(w.toString()).replaceAll("\\|", "_");
     }
 
     @Override

@@ -606,8 +606,8 @@ public class OSMReader implements DataReader {
         int lastInBoundsPillarNode = -1;
         try {
             for (int i = 0; i < osmNodeIds.size(); i++) {
-                long osmNodeId = osmNodeIds.get(i);
-                int tmpNode = getNodeMap().get(osmNodeId);
+                long osmId = osmNodeIds.get(i);
+                int tmpNode = getNodeMap().get(osmId);
                 if (tmpNode == EMPTY_NODE)
                     continue;
 
@@ -622,7 +622,7 @@ public class OSMReader implements DataReader {
                     if (!pointList.isEmpty() && lastInBoundsPillarNode > -TOWER_NODE) {
                         // transform the pillar node to a tower node
                         tmpNode = lastInBoundsPillarNode;
-                        tmpNode = handlePillarNode(tmpNode, osmNodeId, null, true);
+                        tmpNode = handlePillarNode(tmpNode, osmId, null, true);
                         tmpNode = -tmpNode - 3;
                         if (pointList.getSize() > 1 && firstNode >= 0) {
                             // TOWER node
@@ -637,7 +637,7 @@ public class OSMReader implements DataReader {
                 }
 
                 if (tmpNode <= -TOWER_NODE && tmpNode >= TOWER_NODE)
-                    throw new AssertionError("Mapped index not in correct bounds " + tmpNode + ", " + osmNodeId);
+                    throw new AssertionError("Mapped index not in correct bounds " + tmpNode + ", " + osmId);
 
                 if (tmpNode > -TOWER_NODE) {
                     boolean convertToTowerNode = i == 0 || i == lastIndex;
@@ -646,30 +646,12 @@ public class OSMReader implements DataReader {
                     }
 
                     // PILLAR node, but convert to towerNode if end-standing
-                    tmpNode = handlePillarNode(tmpNode, osmNodeId, pointList, convertToTowerNode);
+                    tmpNode = handlePillarNode(tmpNode, osmId, pointList, convertToTowerNode);
                 }
 
                 if (tmpNode < TOWER_NODE) {
                     // TOWER node
                     tmpNode = -tmpNode - 3;
-
-                    if (firstNode >= 0 && firstNode == tmpNode) {
-                        // loop detected. See #1525 and #1533. Insert last OSM ID as tower node. Do this for all loops so that users can manipulate loops later arbitrarily.
-                        long lastOsmNodeId = osmNodeIds.get(i - 1);
-                        int lastGHNodeId = getNodeMap().get(lastOsmNodeId);
-                        if (lastGHNodeId < TOWER_NODE) {
-                            LOGGER.warn("Pillar node " + lastOsmNodeId + " is already a tower node and used in loop, see #1533. " +
-                                    "Fix mapping for way " + wayOsmId + ", nodes:" + osmNodeIds);
-                            break;
-                        }
-
-                        int newEndNode = -handlePillarNode(lastGHNodeId, lastOsmNodeId, pointList, true) - 3;
-                        newEdges.add(addEdge(firstNode, newEndNode, pointList, flags, wayOsmId));
-                        pointList.clear();
-                        pointList.add(nodeAccess, newEndNode);
-                        firstNode = newEndNode;
-                    }
-
                     pointList.add(nodeAccess, tmpNode);
                     if (firstNode >= 0) {
                         newEdges.add(addEdge(firstNode, tmpNode, pointList, flags, wayOsmId));
@@ -788,7 +770,7 @@ public class OSMReader implements DataReader {
         else
             pointList.add(lat, lon);
 
-        return tmpNode;
+        return (int) tmpNode;
     }
 
     protected void finishedReading() {

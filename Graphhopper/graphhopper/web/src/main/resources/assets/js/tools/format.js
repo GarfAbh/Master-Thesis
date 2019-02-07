@@ -4,7 +4,6 @@ function insComma(textA, textB) {
     return textB;
 }
 
-// TODO unused: currently just dataToHtml is used
 function formatLocationEntry(address) {
     var locationDetails = {};
     var text = "";
@@ -54,7 +53,6 @@ function formatLocationEntry(address) {
 
 module.exports.formatLocationEntry = formatLocationEntry;
 
-// TODO unused
 module.exports.formatAddress = function (address) {
     return ((address.road) ? address.road + ', ' : '') +
         ((address.postcode) ? address.postcode + ', ' : '') +

@@ -366,11 +366,7 @@ public final class GraphHopperGtfs implements GraphHopperAPI {
                             t.transfer.min_transfer_time = (int) (t.time / 1000L);
                             gtfsFeed.transfers.put(t.id, t.transfer);
                         });
-                try {
-                    gtfsReader.buildPtNetwork();
-                } catch (Exception e) {
-                    throw new RuntimeException("Error while constructing transit network. Is your GTFS file valid? Please check log for possible causes.", e);
-                }
+                gtfsReader.readGraph();
             }
             graphHopperStorage.flush();
             return graphHopperStorage;
@@ -424,22 +420,14 @@ public final class GraphHopperGtfs implements GraphHopperAPI {
                     final GraphExplorer graphExplorer = new GraphExplorer(queryGraph, accessEgressWeighting, flagEncoder, gtfsStorage, realtimeFeed, false, Collections.emptyList(), true, 5.0);
 
                     MultiCriteriaLabelSetting router = new MultiCriteriaLabelSetting(graphExplorer, flagEncoder, false, Double.MAX_VALUE, false, false, false, Integer.MAX_VALUE, new ArrayList<>());
-                    Iterator<Label> iterator = router.calcLabels(fromnode, tonode, Instant.ofEpochMilli(0), 0).iterator();
-                    Label solution = null;
-                    while (iterator.hasNext()) {
-                        Label label = iterator.next();
-                        if (tonode == label.adjNode) {
-                            solution = label;
-                            break;
-                        }
-                    }
-                    if (solution == null) {
-                        throw new RuntimeException("Can't find a transfer walk route.");
-                    }
+                    final Stream<Label> labels = router.calcLabels(fromnode, tonode, Instant.ofEpochMilli(0), 0);
+                    List<Label> solutions = labels
+                            .filter(current -> tonode == current.adjNode)
+                            .collect(Collectors.toList());
                     TransferWithTime transferWithTime = new TransferWithTime();
                     transferWithTime.id = e.getKey();
                     transferWithTime.transfer = e.getValue();
-                    transferWithTime.time = solution.currentTime;
+                    transferWithTime.time = solutions.get(0).currentTime;
                     return transferWithTime;
                 });
     }

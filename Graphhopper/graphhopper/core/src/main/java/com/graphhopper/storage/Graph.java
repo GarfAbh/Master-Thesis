@@ -43,11 +43,6 @@ public interface Graph {
     int getNodes();
 
     /**
-     * @return the number of edges in this graph. equivalent to getAllEdges().length();
-     */
-    int getEdges();
-
-    /**
      * Creates a node explorer to access node properties.
      */
     NodeAccess getNodeAccess();

@@ -77,7 +77,8 @@ public class RAMDataAccess extends AbstractDataAccess {
     public RAMDataAccess create(long bytes) {
         if (segments.length > 0)
             throw new IllegalThreadStateException("already created");
-        
+
+        // initialize transient values
         setSegmentSize(segmentSizeInBytes);
         ensureCapacity(Math.max(10 * 4, bytes));
         return this;

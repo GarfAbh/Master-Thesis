@@ -89,7 +89,12 @@ Graphhopper API : https://graphhopper.com/api/1/docs/route-optimization/
 
 # Day 5
 End of the 1st week. Let's make a table that resume the whole exploration and also finishing the exploration with the potentialy interesting tool I've seen the day before. The table is available in the relevant link section.
+OptaPlanner sound to be the optimization tool. Linking with the routing tool then you have the product. I'll explore this during the day after finishing exploring the other tool.
 
 ### Relevant link :
 
 Resume table : <https://docs.google.com/spreadsheets/d/1TJBpeRNf6NmgbpopDPa9OuvlgIHcmkL10r7P27FXFIU/edit?usp=sharing>
+
+OptaPlanner : <https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html>
+
+OpenRouteService repo : <https://github.com/GIScience/openrouteservice/>

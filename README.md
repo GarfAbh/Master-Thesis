@@ -45,7 +45,7 @@ You have to optimize the delivery system for a fleet of truck starting from A go
 -   Integration in the intern soft
 -   Integration of the routing in the GPS
 
-## Tools feature needed list
+## Tools' feature needed list
 
 -  Still exist ?
 -  Licence

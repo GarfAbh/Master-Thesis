@@ -47,8 +47,7 @@ public class GraphHopperGeocodingIT {
     @Test
     public void testForwardGeocodingNominatim() {
         GHGeocodingResponse response = geocoding.geocode(new GHGeocodingRequest(false, null, "Berlin", "en", 5, "nominatim", 5000));
-        int size = response.getHits().size();
-        assertTrue("Unexpected response hit count " + size, size == 4 || size == 5);
+        assertEquals(5, response.getHits().size());
         assertTrue(response.getHits().get(0).getName().contains("Berlin"));
     }
 

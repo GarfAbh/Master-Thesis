@@ -57,8 +57,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import static com.graphhopper.routing.ch.CHAlgoFactoryDecorator.EdgeBasedCHMode.EDGE_OR_NODE;
-import static com.graphhopper.routing.ch.CHAlgoFactoryDecorator.EdgeBasedCHMode.OFF;
 import static com.graphhopper.util.Helper.*;
 import static com.graphhopper.util.Parameters.Algorithms.*;
 
@@ -516,7 +514,7 @@ public class GraphHopper implements GraphHopperAPI {
     }
 
     /**
-     * Reads the configuration from a CmdArgs object which can be manually filled, or via
+     * Reads the configuration from a CmdArgs object which can be manually filled, or via 
      * CmdArgs.read(String[] args)
      */
     public GraphHopper init(CmdArgs args) {
@@ -759,8 +757,7 @@ public class GraphHopper implements GraphHopperAPI {
 
         if (chFactoryDecorator.isEnabled()) {
             initCHAlgoFactoryDecorator();
-            ghStorage = new GraphHopperStorage(chFactoryDecorator.getNodeBasedWeightings(), chFactoryDecorator.getEdgeBasedWeightings(),
-                    dir, encodingManager, hasElevation(), ext);
+            ghStorage = new GraphHopperStorage(chFactoryDecorator.getWeightings(), dir, encodingManager, hasElevation(), ext);
         } else {
             ghStorage = new GraphHopperStorage(dir, encodingManager, hasElevation(), ext);
         }
@@ -819,13 +816,8 @@ public class GraphHopper implements GraphHopperAPI {
             for (FlagEncoder encoder : encodingManager.fetchEdgeEncoders()) {
                 for (String chWeightingStr : chFactoryDecorator.getWeightingsAsStrings()) {
                     // ghStorage is null at this point
-                    CHAlgoFactoryDecorator.EdgeBasedCHMode edgeBasedCHMode = chFactoryDecorator.getEdgeBasedCHMode();
-                    if (!(edgeBasedCHMode == EDGE_OR_NODE && encoder.supports(TurnWeighting.class))) {
-                        chFactoryDecorator.addNodeBasedWeighting(createWeighting(new HintsMap(chWeightingStr), encoder, null));
-                    }
-                    if (edgeBasedCHMode != OFF && encoder.supports(TurnWeighting.class)) {
-                        chFactoryDecorator.addEdgeBasedWeighting(createWeighting(new HintsMap(chWeightingStr), encoder, null));
-                    }
+                    Weighting weighting = createWeighting(new HintsMap(chWeightingStr), encoder, null);
+                    chFactoryDecorator.addWeighting(weighting);
                 }
             }
         }
@@ -871,7 +863,7 @@ public class GraphHopper implements GraphHopperAPI {
         initLocationIndex();
 
         if (chFactoryDecorator.isEnabled())
-            chFactoryDecorator.createPreparations(ghStorage);
+            chFactoryDecorator.createPreparations(ghStorage, traversalMode);
         if (!isCHPrepared())
             prepareCH();
 
@@ -1049,6 +1041,7 @@ public class GraphHopper implements GraphHopperAPI {
                     else
                         throw new IllegalStateException("Although CH was enabled a non-CH algorithm factory was returned " + tmpAlgoFactory);
 
+                    tMode = getCHFactoryDecorator().getNodeBase();
                     queryGraph = new QueryGraph(ghStorage.getGraph(CHGraph.class, weighting));
                     queryGraph.lookup(qResults);
                 } else {
@@ -1056,8 +1049,8 @@ public class GraphHopper implements GraphHopperAPI {
                     queryGraph = new QueryGraph(ghStorage);
                     queryGraph.lookup(qResults);
                     weighting = createWeighting(hints, encoder, queryGraph);
+                    ghRsp.addDebugInfo("tmode:" + tMode.toString());
                 }
-                ghRsp.addDebugInfo("tmode:" + tMode.toString());
 
                 int maxVisitedNodesForRequest = hints.getInt(Routing.MAX_VISITED_NODES, maxVisitedNodes);
                 if (maxVisitedNodesForRequest > maxVisitedNodes)

@@ -18,9 +18,7 @@
 package com.graphhopper.util.shapes;
 
 import com.graphhopper.util.NumHelper;
-import org.locationtech.jts.geom.Point;
-
-import java.util.Locale;
+import com.vividsolutions.jts.geom.Point;
 
 /**
  * @author Peter Karich
@@ -103,10 +101,6 @@ public class GHPoint {
     @Override
     public String toString() {
         return lat + "," + lon;
-    }
-
-    public String toShortString() {
-        return String.format(Locale.ROOT, "%.8f,%.8f", lat, lon);
     }
 
     /**

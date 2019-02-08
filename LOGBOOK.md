@@ -74,7 +74,7 @@ It is time to continue to study the other existing tool. There is a non exhausti
 Based on what I seen with OSRM and the specification of the project I establish a list of needed feature the the tool must / should have in order to be consider or not for the rest of the project.
 The list is in the README file.
 I had been recommanded to have a look at graphhopper.
-It seems pretty full of functionnality. I DL the repo as with OSRM and try some run. I had an issues with there automatic install script. I then try there forum and the community sound active i had a response 30 minutes after having ask. At the end it seems that the offline mode is not possible with this tool. Continue to explore then.
+It seems pretty full of functionnality. I dl the repo as with OSRM and try some run. I had an issues with there automatic install script. I then try there forum and the community sound active i had a response 30 minutes after having ask. At the end it seems that the offline mode is not possible with this tool. Continue to explore then.
 
 I also have a quick look on all the other tool from the list. In order to simply see if this is usefull or not to go deep in the exploration with them or if i can go straigth forward.
 
@@ -88,6 +88,7 @@ Graphhoper git repo : <https://github.com/graphhopper>
 Graphhopper API : https://graphhopper.com/api/1/docs/route-optimization/
 
 # Day 5
+
 End of the 1st week. Let's make a table that resume the whole exploration and also finishing the exploration with the potentialy interesting tool I've seen the day before. The table is available in the relevant link section.
 OptaPlanner sound to be the optimization tool. Linking with the routing tool then you have the product. I'll explore this during the day after finishing exploring the other tool.
 

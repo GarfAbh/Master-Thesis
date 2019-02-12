@@ -3,7 +3,9 @@
 This is the logbook of my master thesis.
 I will here describe all the step I followed during the whole project. The interrogation the solution I found how and why. the idea is to be able to reconstruct the whole process of the project I've made.
 
-# Day 1
+W1D1 means week 1 day 1
+
+# W1D1
 
 Setup of the github repo and also familiarisation with the developpement tools I'll use for the rest of the project. Also start to work on OSRM as suggested by my Supervisor.
 I forked the repo and try to build / run it.
@@ -29,7 +31,7 @@ OSRM API : <http://project-osrm.org/docs/v5.5.1/api/#routestep-object>
 For test and Developement at the moment I use Atom. No package for the moment.
 Language : C++
 
-# Day 2
+# W1D2
 
 I need data to use the executable so first dl the convertor by simply : `sudo apt install osmctools`
 
@@ -58,7 +60,7 @@ creation of an organizational graph on latex to have a better representation of 
 <https://github.com/Project-OSRM/osrm-backend/wiki/Running-OSRM>
 
 
-# Day 3
+# W1D3
 
 I started the day with the thinking of my futur code architecture. The idea is to first have a clear code architecture to not struggles at some point where you have multiple piece of code and you don't know where to put what. I also tried to do a makefile and a kind of test file to use osrm. Issue : we cannot use makefile ase easy as i thought for that kind of project I documment then my self on Cmake (already use for osrm building ...). I also checked documentation on the algorithms used by osrm to have a better understanding of the tool. Unfortunately MLD(Multiple Level Dijkstra) has not really documentation on the web. I'll figure out what is really and how it works. I found some CH (Contraction Hierarchies) documentation. The best example found is on the french wikipedia page (available in the relevant link of the day).
 
@@ -68,7 +70,7 @@ I started the day with the thinking of my futur code architecture. The idea is t
 
 French wikipedia page for CH : <https://fr.wikipedia.org/wiki/Contractions_hi%C3%A9rarchiques>
 
-# Day 4
+# W1D4
 
 It is time to continue to study the other existing tool. There is a non exhaustiv list existing on the wikipedia page in the relevant link.
 Based on what I seen with OSRM and the specification of the project I establish a list of needed feature the the tool must / should have in order to be consider or not for the rest of the project.
@@ -87,7 +89,7 @@ Graphhoper git repo : <https://github.com/graphhopper>
 
 Graphhopper API : https://graphhopper.com/api/1/docs/route-optimization/
 
-# Day 5
+# W1D5
 
 End of the 1st week. Let's make a table that resume the whole exploration and also finishing the exploration with the potentialy interesting tool I've seen the day before. The table is available in the relevant link section.
 OptaPlanner sound to be the optimization tool. Linking with the routing tool then you have the product. I'll explore this during the day after finishing exploring the other tool.
@@ -99,3 +101,33 @@ Resume table : <https://docs.google.com/spreadsheets/d/1TJBpeRNf6NmgbpopDPa9Ouvl
 OptaPlanner : <https://www.optaplanner.org/learn/useCases/vehicleRoutingProblem.html>
 
 OpenRouteService repo : <https://github.com/GIScience/openrouteservice/>
+
+
+# W2D1
+
+The aim of the day was to go deeper in graphHopper to clarify the unclear points.
+The websit is beautifull and atractive but not relevant in term of organization to understand how it works.
+Finally figure out that yes there is an open source repo to our routing issues : jsprit
+
+It's build on top of graphopper so it's resolving issue in place (offline <3) but not on the map.
+The problem then remain to get our data properly and pass it correctly to jsprit to solve it.
+
+For the moment I don't have a deep understanding of jsprit but using the example code and going through the source code I may say that it could be a better choice than OSRM as we will have less implementation to do. However I have to keep in mind that it's in java and JNI would be needed in order to have a good interface with python. But this is a latter issue.
+
+While going through the internet to checkout which kind of algorithm is used or not I found Vroom. It's like jsprit but with OSRM. and it seems to have the needed functionnality.
+
+
+### Relevant link :
+
+Jsprit repo : <https://github.com/graphhopper/jsprit>
+
+Vroom repo : <https://github.com/VROOM-Project/vroom>
+
+# W2D2
+
+Today is teacher meeting and also conclusion of the first step of the thesis.
+All the comments and component i took into acount to choose some tool in particular are resume in my resume table.
+
+### Relevant link :
+
+Resume table : <https://docs.google.com/spreadsheets/d/1TJBpeRNf6NmgbpopDPa9OuvlgIHcmkL10r7P27FXFIU/edit?usp=sharing>

@@ -126,7 +126,11 @@ Vroom repo : <https://github.com/VROOM-Project/vroom>
 # W2D2
 
 Today is teacher meeting and also conclusion of the first step of the thesis.
-All the comments and component i took into acount to choose some tool in particular are resume in my resume table.
+All the comments and component I took into acount to choose some tool in particular are resume in my resume table.
+
+Meeting were concluant. Still need to explore one tool that was put aside too soon : OpenTripPlanner.
+
+Otherwise in any case now I clean my repo to keep Vroom with OSRM and jsprit with graphhopper. The idea now is to make 2 / 3 POC (Proof of concept) and already make some benchmark in order to have a better idea on where we are going.
 
 ### Relevant link :
 

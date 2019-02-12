@@ -112,9 +112,22 @@ Finally figure out that yes there is an open source repo to our routing issues :
 It's build on top of graphopper so it's resolving issue in place (offline <3) but not on the map.
 The problem then remain to get our data properly and pass it correctly to jsprit to solve it.
 
-For the moment I don't have a deep understanding of jsprit but using the example code and going through the source code I may say that it could be a better choice than OSRM as we will have less implementation to do. However I have to keep in mind that it's in java and JNI would probably be needed in order to have a good interface with python. But this is a latter issue.
+For the moment I don't have a deep understanding of jsprit but using the example code and going through the source code I may say that it could be a better choice than OSRM as we will have less implementation to do. However I have to keep in mind that it's in java and JNI would be needed in order to have a good interface with python. But this is a latter issue.
+
+While going through the internet to checkout which kind of algorithm is used or not I found Vroom. It's like jsprit but with OSRM. and it seems to have the needed functionnality.
 
 
 ### Relevant link :
 
 Jsprit repo : <https://github.com/graphhopper/jsprit>
+
+Vroom repo : <https://github.com/VROOM-Project/vroom>
+
+# W2D2
+
+Today is teacher meeting and also conclusion of the first step of the thesis.
+All the comments and component i took into acount to choose some tool in particular are resume in my resume table.
+
+### Relevant link :
+
+Resume table : <https://docs.google.com/spreadsheets/d/1TJBpeRNf6NmgbpopDPa9OuvlgIHcmkL10r7P27FXFIU/edit?usp=sharing>

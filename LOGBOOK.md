@@ -28,8 +28,8 @@ OSRM API : <http://project-osrm.org/docs/v5.5.1/api/#routestep-object>
 
 ### Dev tool
 
-For test and Developement at the moment I use Atom. No package for the moment.
-Language : C++
+For test and Developement at the moment I use Atom Clion Intelij.
+Language : C++, Java
 
 # W1D2
 
@@ -139,3 +139,7 @@ I use random generator to be sure not having bias and at the i would like to be 
 ### Relevant link :
 
 Resume table : <https://docs.google.com/spreadsheets/d/1TJBpeRNf6NmgbpopDPa9OuvlgIHcmkL10r7P27FXFIU/edit?usp=sharing>
+
+# W2D3
+
+I make a deeper search about OpenTripPlanner. It's more about planning it's trip than having a really usable routing planification with multiple stops for vehicule. So we drop this tools and now i focus on making POC for the 2 other tool we decided to keep.

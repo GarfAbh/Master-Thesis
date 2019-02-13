@@ -19,31 +19,31 @@ You have to optimize the delivery system for a fleet of truck starting from A go
 
 ### Step 1
 
--   State of the art
--   Identify the usefull tool (OSRM may be one of them)
+-  [x] State of the art
+-  [x] Identify the usefull tool
 
 ### Step 2
 
--   Developing the routing management system
--   From A to B with multiple inside points
--   Time management
+-  [ ] Developing the routing management system
+-  [ ] From A to B with multiple inside points
+-  [ ] Time management
 
 ### Step 3
 
--   Stop time management
--   Time of passage.
+-  [ ] Stop time management
+-  [ ] Time of passage.
        Some machine may only be accessible at some precise time during the day
     ### Step 4
--   Validation of theoritical data
+-  [ ] Validation of theoritical data
 
 ### Step 5
 
--   Traffic management
+-  [ ] Traffic management
 
 ### Step 6
 
--   Integration in the intern soft
--   Integration of the routing in the GPS
+-  [ ] Integration in the intern soft
+-  [ ] Integration of the routing in the GPS
 
 ## Tools' feature needed list
 

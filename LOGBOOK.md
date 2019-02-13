@@ -132,6 +132,10 @@ Meeting were concluant. Still need to explore one tool that was put aside too so
 
 Otherwise in any case now I clean my repo to keep Vroom with OSRM and jsprit with graphhopper. The idea now is to make 2 / 3 POC (Proof of concept) and already make some benchmark in order to have a better idea on where we are going.
 
+Begining of the work on the 1st POC : Vroom + OSRM i made 2 script a first one to make the whole folder organisation correctly to make my soft call inteligent the second one to run the OSRM server using CH or MLD.
+I also started to do the source code of a tester that will make some test on real potential use case.
+I use random generator to be sure not having bias and at the i would like to be able to compare CH and MLD with different configuration (comparable with jsprit of course) doing an average on each run ...
+
 ### Relevant link :
 
 Resume table : <https://docs.google.com/spreadsheets/d/1TJBpeRNf6NmgbpopDPa9OuvlgIHcmkL10r7P27FXFIU/edit?usp=sharing>

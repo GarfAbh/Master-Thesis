@@ -43,6 +43,7 @@ cd ../../..
 ./OSRM/osrm-backend/build/osrm-extract data/OSRM/OSM/monaco/monaco-latest.osm.pbf -p \
 OSRM/osrm-backend/profiles/car.lua
 mv data/OSRM/OSM/monaco/monaco-latest.osrm* data/OSRM/monaco/
+
 ./OSRM/osrm-backend/build/osrm-partition data/OSRM/monaco/monaco-latest.osrm
 ./OSRM/osrm-backend/build/osrm-customize data/OSRM/monaco/monaco-latest.osrm
 

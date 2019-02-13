@@ -28,8 +28,8 @@ OSRM API : <http://project-osrm.org/docs/v5.5.1/api/#routestep-object>
 
 ### Dev tool
 
-For test and Developement at the moment I use Atom. No package for the moment.
-Language : C++
+For test and Developement at the moment I use Atom Clion Intelij.
+Language : C++, Java
 
 # W1D2
 

@@ -135,3 +135,7 @@ Otherwise in any case now I clean my repo to keep Vroom with OSRM and jsprit wit
 ### Relevant link :
 
 Resume table : <https://docs.google.com/spreadsheets/d/1TJBpeRNf6NmgbpopDPa9OuvlgIHcmkL10r7P27FXFIU/edit?usp=sharing>
+
+# W2D3
+
+I make a deeper search about OpenTripPlanner. It's more about planning it's trip than having a really usable routing planification with multiple stops for vehicule. So we drop this tools and now i focus on making POC for the 2 other tool we decided to keep.

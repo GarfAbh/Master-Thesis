@@ -11,7 +11,7 @@
 #include "utils/exception.h"
 
 #include "string.h"
-#include <curl.h>
+#include <curl/curl.h>
 
 #define URL "0.0.0.0:5000/nearest/v1/driving/"
 #define END_URL "?number=1&bearing=0,0"

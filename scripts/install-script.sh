@@ -31,11 +31,11 @@ fi
 
 
 if [ ! -e data/OSRM/switzerland ]; then
+  mkdir data/OSRM/switzerland
   echo creation of swiss for OSRM
   ./OSRM/osrm-backend/build/osrm-extract data/OSM/switzerland/switzerland-latest.osm.pbf \
   -p OSRM/osrm-backend/profiles/car.lua
   mv data/OSM/switzerland/switzerland-latest.osrm* data/OSRM/switzerland
-  mkdir data/OSRM/switzerland
 fi
 
 #TODO figure out how does the map are treated by graphhopper ...

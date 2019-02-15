@@ -143,3 +143,14 @@ Resume table : <https://docs.google.com/spreadsheets/d/1TJBpeRNf6NmgbpopDPa9Ouvl
 # W2D3
 
 I make a deeper search about OpenTripPlanner. It's more about planning it's trip than having a really usable routing planification with multiple stops for vehicule. So we drop this tools and now i focus on making POC for the 2 other tool we decided to keep.
+
+# W2D4
+
+the first POC is in progress. As i'll use it to make a little benchmark I try to make it the most random possible to get real possible value. One of the issue is to get a random address there is some website that give that but impossible to make some request to it and get simple answer. I decided to use the OSRM API. Once the server is on there is a request that ask for the nearest point from the one you are giving. THe idea is so to use curl library on local host server to get random address.
+
+Now i'm struggle with the location of the curl library on the office computer.
+
+# W2D5
+
+lets find the path to this library and make the first poc work and also start having some statistic from this.
+I also figure out that it could be possible to simply launch a vroom instance and pass it a json file. So it could be usefull to think about some code that juste create and format json from our need.

@@ -3,6 +3,8 @@
 //
 
 #include <iostream>
+#include <curl/curl.h>
+#include <regex>
 
 #include "routing/routed_wrapper.h"
 #include "structures/vroom/input/input.h"
@@ -11,7 +13,7 @@
 #include "utils/exception.h"
 
 #include "string.h"
-#include <curl/curl.h>
+
 
 #define URL "0.0.0.0:5000/nearest/v1/driving/"
 #define END_URL "?number=1&bearing=0,0"
@@ -28,7 +30,7 @@
  * les autres job sont random partout en suisse
  * */
 
-
+using namespace std;
 const int TW_JOB_PER = 20;
 
 void set_vehicule(vroom::Input *problem_instance);
@@ -38,40 +40,49 @@ void random_addr_generator(double *long_lat);
 size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp);
 void log_solution(const vroom::Solution& sol, bool geometry);
 
-using namespace std;
+
 
 int main(int argc, char *argv[]) {
 
     if (argc != 4) {
-        cout << "usage : ";
-        cout << "./main x y z : ";
-        cout << "x is the number of job for the simulation";
-        cout << "y is the number of exploration level";
-        cout << "z is the number of thread you'd like to use";
+        cout << "usage : \n";
+        cout << "./main x y z : \n";
+        cout << "x is the number of job for the simulation\n";
+        cout << "y is the number of exploration level\n";
+        cout << "z is the number of thread you'd like to use\n";
         return 1;
     }
-
+    //TODO il me faut moi même donné un random et le passé à srand()
+    //sinon j'aurais un million de fois le même réultats youpie
+    //passée peut être la cpacité du nombre de job que peut faire chaque véhicule.
+    //il faut que je vérifie que tout les résultats sont correct.
+    
     bool GEOMETRY = true;
 
     // Set OSRM host and port.
+    cout << "set OSRM host and port \n";
     auto routing_wrapper =
-            make_unique<vroom::routing::RoutedWrapper>("car",
-                                                       vroom::Server("localhost", "5000"));
+            make_unique<vroom::routing::RoutedWrapper>
+            ("car",vroom::Server("localhost", "5000"));
+
+    cout << "set vroom Input \n";
     vroom::Input problem_instance;
     problem_instance.set_routing(move(routing_wrapper));
 
     //TODO voir si on a besoin de ca ou pas.
     problem_instance.set_geometry(GEOMETRY); // Query for route geometry
     // after solving.
-
+    cout << "set the vehicules \n";
     set_vehicule(&problem_instance);
+
+    cout << "set the jobs \n";
     set_jobs(atoi(argv[1]), &problem_instance);
 
     // Solve!
     try {
+        cout << "trying to solve the problem \n";
         auto sol = problem_instance.solve(atoi(argv[2]), atoi(argv[3]));
         // Use argv[2] lvl expl and argv[3] threads.
-
         log_solution(sol, GEOMETRY);
     } catch (const vroom::Exception &e) {
         cerr << "[Error] " << e.message << endl;
@@ -79,13 +90,12 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-
-
 void set_vehicule(vroom::Input *problem_instance) {
 
     // Create one-dimension capacity restrictions to model the situation
     // where one vehicle can handle 4 jobs.
-    vroom::Amount vehicle_capacity(0);
+    vroom::Amount vehicle_capacity(1);
+    vehicle_capacity[0] = 20;
 
     //c'est en remplissant ce tableau que je peut donner plus de contrainte a chaque fois
     //du moment que je les ai setup corretement avec vehicule_capacity.
@@ -108,8 +118,8 @@ void set_vehicule(vroom::Input *problem_instance) {
                      vehicle_tw);      // time window
 
     problem_instance->add_vehicle(v);
+    cout << "vehicule setup \n";
 }
-
 void set_jobs(int nb_jobs, vroom::Input *problem_instance) {
     //c'est la durée d'un stop pour faire le job ici le remplissage
     vroom::Duration service = 15 * 60; // 15 minutes
@@ -127,6 +137,8 @@ void set_jobs(int nb_jobs, vroom::Input *problem_instance) {
     for (int i = 0; i < nb_jobs; ++i) {
         //20% des livraisons peuvent être obligatoirement entre 8h et 10h
         random_addr_generator(long_lat);
+        cout << long_lat[0] << endl;
+        cout << long_lat[1] << endl;
         if (rand() % 100 < TW_JOB_PER) {
             //on push un job avec une timewindow entre 8 et 10h
             jobs.push_back(vroom::Job(i + 1,
@@ -146,59 +158,71 @@ void set_jobs(int nb_jobs, vroom::Input *problem_instance) {
                                       {}));
         }
     }
-
+    cout << "jobs setup \n";
+    cout << problem_instance->amount_size() << endl;
     for (const auto &j : jobs) {
         problem_instance->add_job(j);
     }
+    cout << "jobs setup \n";
 }
 
+
+static size_t write_function(void *ptr, size_t size, size_t nmemb, void *userp){
+  ((std::string*)userp)->append((char*)ptr, size * nmemb);
+  return size * nmemb;
+}
 void random_addr_generator(double *long_lat) {
-    double lon = random_long_lat_generator("long");
-    double lat = random_long_lat_generator("lat");
-    string *buffer = nullptr;
-    string url = "0.0.0.0:5000/nearest/v1/driving/" + to_string(lon) + "," + to_string(lat) + "?number=1&bearing=0,0";
-    CURL *curl = curl_easy_init();
+    CURL* curl;
+    CURLcode sucess;
+    string buffer;
+    double lon, lat;
+    do{
+      lon = random_long_lat_generator("long");
+      lat = random_long_lat_generator("lat");
+      string url = "0.0.0.0:5000/nearest/v1/driving/" + to_string(lon) + "," + to_string(lat) + "?number=1&bearings=0,0";
+      curl = curl_easy_init();
+      cout << "url is : " << url << "\n";
 
-    if (curl_easy_setopt(curl, CURLOPT_URL, url.c_str()) != CURLE_OK) {
-        //erreur
+      curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+      curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_function);
+      curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
+      sucess = curl_easy_perform(curl);
+      curl_easy_cleanup(curl);
+    }while(sucess != CURLE_OK);
+
+    cout << buffer << "\n";
+
+    //regex to capture the needed information.
+    regex reg ("\\[(\\s*([^\"]*)\\s*)\\]");
+    smatch m;
+    string::const_iterator searchStart(buffer.cbegin());
+
+    for(int i = 0 ; i < 2 ; i++){
+      regex_search(searchStart,buffer.cend(),m,reg);
+      searchStart = m.suffix().first;
     }
 
-
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, buffer);
-    CURLcode sucess = curl_easy_perform(curl);
-    if (sucess != CURLE_OK) {
-        //il faut recommencer;
+    stringstream ss;
+    ss.str(m.str(1));
+    string token;
+    for(int i = 0 ; i < 2 ; i++){
+      getline(ss,token,',');
+      long_lat[i] = stod(token);
     }
-
-    //TODO utiliser curl pour faire une demande sur l'instance de server interne.
-    /*
-     * genere l'URL avec les constante connu et ce que tu viens de generer
-     * encapsule le tout et faire une request server et récupere le plus proche
-     * si la request server fonctionne pas redemande un long et un lat et recommance
-     * */
-
-    curl_easy_cleanup(curl);
-
-    long_lat[0] = lon;
-    long_lat[1] = lat;
 }
-
 double random_long_lat_generator(std::string ll) {
     double tmp;
     double r = double(rand()) / (double(RAND_MAX));
     double range;
-    if (ll.compare("long")) {
+    if (ll.compare("long") == 0) {
         range = 10.492 - 5.956;
         tmp = r * range + 5.956;
     } else {
-        range = 45.818 - 45.818;
+        range = 47.80842 - 45.818;
         tmp = r * range + 45.818;
     }
     return tmp;
 }
-
-
-
 void log_solution(const vroom::Solution& sol, bool geometry) {
     std::cout << "Total cost: " << sol.summary.cost << std::endl;
     std::cout << "Unassigned: " << sol.summary.unassigned << std::endl;

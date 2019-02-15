@@ -139,3 +139,7 @@ Resume table : <https://docs.google.com/spreadsheets/d/1TJBpeRNf6NmgbpopDPa9Ouvl
 # W2D3
 
 I make a deeper search about OpenTripPlanner. It's more about planning it's trip than having a really usable routing planification with multiple stops for vehicule. So we drop this tools and now i focus on making POC for the 2 other tool we decided to keep.
+
+Finally manage to get a working code. It create 1 vehicule and optimize it's routing between a starting point and an end point (both given) random generation of jobs (address). Still have to figure out some parameters that could be taken into acount. Also think about which parameters should be fixed or given at the execution. Create the script to make the whole execution automatic and then get the results properly outputed. When this is done repeat with Graphhopper and jsprit. Then make the comparison analysis
+
+Issue of the day was working with libcurl that is not that easy to understand. This lib was mandatory to make a random address generator for the testing.

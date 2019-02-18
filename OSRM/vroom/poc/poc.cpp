@@ -34,9 +34,9 @@ using namespace std;
 const int TW_JOB_PER = 20;
 
 void set_vehicule(vroom::Input *problem_instance);
-void set_jobs(int nb_jobs, vroom::Input *problem_instance);
-double random_long_lat_generator(std::string ll);
-void random_addr_generator(double *long_lat);
+void set_jobs(int nb_jobs, vroom::Input *problem_instance, string zone, string rand);
+double random_long_lat_generator(std::string ll, string zone);
+void random_addr_generator(double *long_lat,string zone);
 size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp);
 void log_solution(const vroom::Solution& sol, bool geometry);
 
@@ -44,12 +44,15 @@ void log_solution(const vroom::Solution& sol, bool geometry);
 
 int main(int argc, char *argv[]) {
 
-    if (argc != 4) {
+    if (argc != 7) {
         cout << "usage : \n";
         cout << "./main x y z : \n";
         cout << "x is the number of job for the simulation\n";
         cout << "y is the number of exploration level\n";
         cout << "z is the number of thread you'd like to use\n";
+        cout << "lausanne / swiss if you wish to work in lausanne or nothing for anywhere else in switzerland\n";
+        cout << "true false depending on randomness for timewindowed job\n";
+        cout << "seed for the randomizer (unsigned int)\n";
         return 1;
     }
     //TODO il me faut moi même donné un random et le passé à srand()
@@ -58,7 +61,7 @@ int main(int argc, char *argv[]) {
     //il faut que je vérifie que tout les résultats sont correct.
 
     bool GEOMETRY = true;
-
+    srand(atoi(argv[6]));
     // Set OSRM host and port.
     cout << "set OSRM host and port \n";
     auto routing_wrapper =
@@ -76,7 +79,8 @@ int main(int argc, char *argv[]) {
     set_vehicule(&problem_instance);
 
     cout << "set the jobs \n";
-    set_jobs(atoi(argv[1]), &problem_instance);
+    set_jobs(atoi(argv[1]), &problem_instance,string(argv[4]),string(argv[5]));
+
 
     // Solve!
     try {
@@ -95,7 +99,8 @@ void set_vehicule(vroom::Input *problem_instance) {
     // Create one-dimension capacity restrictions to model the situation
     // where one vehicle can handle 4 jobs.
     vroom::Amount vehicle_capacity(1);
-    vehicle_capacity[0] = 20;
+    vehicle_capacity[0] = 100;
+
 
     //c'est en remplissant ce tableau que je peut donner plus de contrainte a chaque fois
     //du moment que je les ai setup corretement avec vehicule_capacity.
@@ -120,7 +125,7 @@ void set_vehicule(vroom::Input *problem_instance) {
     problem_instance->add_vehicle(v);
     cout << "vehicule setup \n";
 }
-void set_jobs(int nb_jobs, vroom::Input *problem_instance) {
+void set_jobs(int nb_jobs, vroom::Input *problem_instance, string zone, string ra) {
     //c'est la durée d'un stop pour faire le job ici le remplissage
     vroom::Duration service = 15 * 60; // 15 minutes
 
@@ -136,10 +141,10 @@ void set_jobs(int nb_jobs, vroom::Input *problem_instance) {
     vector <vroom::Job> jobs;
     for (int i = 0; i < nb_jobs; ++i) {
         //20% des livraisons peuvent être obligatoirement entre 8h et 10h
-        random_addr_generator(long_lat);
+        random_addr_generator(long_lat,zone);
         cout << long_lat[0] << endl;
         cout << long_lat[1] << endl;
-        if (rand() % 100 < TW_JOB_PER) {
+        if( (rand() % 100 < TW_JOB_PER) && (ra.compare("true") == 0) ) {
             //on push un job avec une timewindow entre 8 et 10h
             jobs.push_back(vroom::Job(i + 1,
                     //Todo ici il me faut un générateur de coordoner en long lat en suisse
@@ -165,20 +170,18 @@ void set_jobs(int nb_jobs, vroom::Input *problem_instance) {
     }
     cout << "jobs setup \n";
 }
-
-
 static size_t write_function(void *ptr, size_t size, size_t nmemb, void *userp){
   ((std::string*)userp)->append((char*)ptr, size * nmemb);
   return size * nmemb;
 }
-void random_addr_generator(double *long_lat) {
+void random_addr_generator(double *long_lat,string zone) {
     CURL* curl;
     CURLcode sucess;
     string buffer;
     double lon, lat;
     do{
-      lon = random_long_lat_generator("long");
-      lat = random_long_lat_generator("lat");
+      lon = random_long_lat_generator("long",zone);
+      lat = random_long_lat_generator("lat",zone);
       string url = "0.0.0.0:5000/nearest/v1/driving/" + to_string(lon) + "," + to_string(lat) + "?number=1&bearings=0,0";
       curl = curl_easy_init();
       cout << "url is : " << url << "\n";
@@ -210,16 +213,39 @@ void random_addr_generator(double *long_lat) {
       long_lat[i] = stod(token);
     }
 }
-double random_long_lat_generator(std::string ll) {
+double random_long_lat_generator(std::string ll, string zone) {
+
+    double max_lon, max_lat, min_lon, min_lat;
+    if(zone.compare("lausanne") == 0){
+      max_lon = 6.732;
+      min_lon = 6.5075;
+
+      max_lat = 46.5845;
+      min_lat = 46.4878;
+    }else if(zone.compare("swiss") == 0){
+      max_lon = 10.492;
+      min_lon = 5.956;
+
+      max_lat = 47.80842;
+      min_lat = 45.818;
+    }else{
+      cout << "c'est pas possible essaye encore <3";
+      max_lon = 10.492;
+      min_lon = 5.956;
+
+      max_lat = 47.80842;
+      min_lat = 45.818;
+    }
+
     double tmp;
     double r = double(rand()) / (double(RAND_MAX));
     double range;
     if (ll.compare("long") == 0) {
-        range = 10.492 - 5.956;
-        tmp = r * range + 5.956;
+        range = max_lon-min_lon;
+        tmp = r * range + min_lon;
     } else {
-        range = 47.80842 - 45.818;
-        tmp = r * range + 45.818;
+        range = max_lat - min_lat;
+        tmp = r * range + min_lat;
     }
     return tmp;
 }

@@ -154,3 +154,13 @@ Now i'm struggle with the location of the curl library on the office computer.
 
 lets find the path to this library and make the first poc work and also start having some statistic from this.
 I also figure out that it could be possible to simply launch a vroom instance and pass it a json file. So it could be usefull to think about some code that juste create and format json from our need.
+
+# W3D1
+
+### Relevant link :
+
+I started to put my thougth on each tool in a resume table available in the relevant link part. I also make script ... to get some statistics from the OSRM + Vroom POC. Still need to analyse and make beautiful graph ...
+Still need to do the same with graphhopper and jsprit.
+
+Resume table : <https://docs.google.com/spreadsheets/d/1nqe-WgKlpyFsKYEEa1XLbwym1JEsX-8OC5GJM5zoBXc/edit#gid=0>
+Performance stats : <https://docs.google.com/spreadsheets/d/1uCsiI2CiCoS5z6I_O5LnAgnBi8EK8CnKl3NOUeQjpcQ/edit#gid=696287079>

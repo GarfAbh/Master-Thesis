@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
     //sinon j'aurais un million de fois le même réultats youpie
     //passée peut être la cpacité du nombre de job que peut faire chaque véhicule.
     //il faut que je vérifie que tout les résultats sont correct.
-    
+
     bool GEOMETRY = true;
 
     // Set OSRM host and port.
@@ -103,7 +103,7 @@ void set_vehicule(vroom::Input *problem_instance) {
 
     //c'est les horaire de boulot quand ca commence et quand ca fini en seconde
     //28800s = 8h; 61200 = 17h
-    vroom::TimeWindow vehicle_tw(28800, 61200);
+    vroom::TimeWindow vehicle_tw(0, 86340);
 
     //46.50190,6.68973 coordinate of Altux
     //46.50910,6.64357 coordinate of my home

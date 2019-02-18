@@ -132,6 +132,10 @@ Meeting were concluant. Still need to explore one tool that was put aside too so
 
 Otherwise in any case now I clean my repo to keep Vroom with OSRM and jsprit with graphhopper. The idea now is to make 2 / 3 POC (Proof of concept) and already make some benchmark in order to have a better idea on where we are going.
 
+Begining of the work on the 1st POC : Vroom + OSRM i made 2 script a first one to make the whole folder organisation correctly to make my soft call inteligent the second one to run the OSRM server using CH or MLD.
+I also started to do the source code of a tester that will make some test on real potential use case.
+I use random generator to be sure not having bias and at the i would like to be able to compare CH and MLD with different configuration (comparable with jsprit of course) doing an average on each run ...
+
 ### Relevant link :
 
 Resume table : <https://docs.google.com/spreadsheets/d/1TJBpeRNf6NmgbpopDPa9OuvlgIHcmkL10r7P27FXFIU/edit?usp=sharing>
@@ -139,6 +143,17 @@ Resume table : <https://docs.google.com/spreadsheets/d/1TJBpeRNf6NmgbpopDPa9Ouvl
 # W2D3
 
 I make a deeper search about OpenTripPlanner. It's more about planning it's trip than having a really usable routing planification with multiple stops for vehicule. So we drop this tools and now i focus on making POC for the 2 other tool we decided to keep.
+
+# W2D4
+
+the first POC is in progress. As i'll use it to make a little benchmark I try to make it the most random possible to get real possible value. One of the issue is to get a random address there is some website that give that but impossible to make some request to it and get simple answer. I decided to use the OSRM API. Once the server is on there is a request that ask for the nearest point from the one you are giving. THe idea is so to use curl library on local host server to get random address.
+
+Now i'm struggle with the location of the curl library on the office computer.
+
+# W2D5
+
+lets find the path to this library and make the first poc work and also start having some statistic from this.
+I also figure out that it could be possible to simply launch a vroom instance and pass it a json file. So it could be usefull to think about some code that juste create and format json from our need.
 
 Finally manage to get a working code. It create 1 vehicule and optimize it's routing between a starting point and an end point (both given) random generation of jobs (address). Still have to figure out some parameters that could be taken into acount. Also think about which parameters should be fixed or given at the execution. Create the script to make the whole execution automatic and then get the results properly outputed. When this is done repeat with Graphhopper and jsprit. Then make the comparison analysis
 

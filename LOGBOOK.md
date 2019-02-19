@@ -160,10 +160,30 @@ Issue of the day was working with libcurl that is not that easy to understand. T
 
 # W3D1
 
-### Relevant link :
+
 
 I started to put my thougth on each tool in a resume table available in the relevant link part. I also make script ... to get some statistics from the OSRM + Vroom POC. Still need to analyse and make beautiful graph ...
 Still need to do the same with graphhopper and jsprit.
 
+### Relevant link :
+
 Resume table : <https://docs.google.com/spreadsheets/d/1nqe-WgKlpyFsKYEEa1XLbwym1JEsX-8OC5GJM5zoBXc/edit#gid=0>
 Performance stats : <https://docs.google.com/spreadsheets/d/1uCsiI2CiCoS5z6I_O5LnAgnBi8EK8CnKl3NOUeQjpcQ/edit#gid=696287079>
+
+# W3D2
+
+I've done the POC for graphHopper + Jsprit it runs still need to figure some function that could not be use in order to have something comparable with OSRM + vroom. I figure out that it would be possible to use parallelism work so I will update my performance test to work between 1 and 64 threads and see which is better. I will also update the perf test for Vroom + OSRM.
+
+### Relevant link :
+
+Performance stats : <https://docs.google.com/spreadsheets/d/14h6lwvHTuU6UD3Tn3puHuVa4lB2KTFjQrSSrcxXTK0U/edit>
+
+# W3D3
+
+I should finish the whole test of both tools with POC files compared in the resume table and both performance test in the drive too.
+
+### Relevant link :
+
+Resume table : <https://docs.google.com/spreadsheets/d/1nqe-WgKlpyFsKYEEa1XLbwym1JEsX-8OC5GJM5zoBXc/edit#gid=0>
+Performance stats Vroom + OSRM : <https://docs.google.com/spreadsheets/d/1uCsiI2CiCoS5z6I_O5LnAgnBi8EK8CnKl3NOUeQjpcQ/edit#gid=696287079>
+Performance stats Jsprit + Graphhopper : <https://docs.google.com/spreadsheets/d/14h6lwvHTuU6UD3Tn3puHuVa4lB2KTFjQrSSrcxXTK0U/edit>

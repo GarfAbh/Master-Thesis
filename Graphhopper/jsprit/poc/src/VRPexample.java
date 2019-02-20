@@ -32,7 +32,6 @@ import java.util.regex.*;
 
 public class VRPexample {
     public static void main(String[] args) throws IOException {
-        System.out.println("hello world");
         Examples.createOutputFolder();
 
         VehicleRoutingProblem.Builder vrpBuilder = VehicleRoutingProblem.Builder.newInstance();
@@ -46,7 +45,7 @@ public class VRPexample {
          * args[4] = la seed pour le random.
          */
         if(args.length != 5){
-            System.out.println("y a un soucis avec les argument il en faut 4");
+            System.out.println("y a un soucis avec les argument il en faut 5");
             System.out.println("usage : ./poc [nb_job] [nb_threads][Lausanne/Swiss] [true/false] [seed]");
         }
 

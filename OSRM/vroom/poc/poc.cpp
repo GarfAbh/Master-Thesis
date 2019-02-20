@@ -211,8 +211,10 @@ void random_addr_generator(double *long_lat,string zone) {
     for(int i = 0 ; i < 2 ; i++){
       getline(ss,token,',');
       long_lat[i] = stod(token);
+      // long_lat[0] = 6.54848;
+      // long_lat[1] = 46.62047;
     }
-}
+
 double random_long_lat_generator(std::string ll, string zone) {
 
     double max_lon, max_lat, min_lon, min_lat;

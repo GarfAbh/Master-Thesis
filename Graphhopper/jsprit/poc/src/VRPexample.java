@@ -61,7 +61,7 @@ public class VRPexample {
         VehicleRoutingProblem vrp = vrpBuilder.build();
         VehicleRoutingAlgorithm vra = Jsprit.Builder.newInstance(vrp).setProperty(Jsprit.Parameter.THREADS,args[1]).buildAlgorithm();
         vra.getAlgorithmListeners().addListener(new StopWatch(),VehicleRoutingAlgorithmListeners.Priority.HIGH);
-        vra.getAlgorithmListeners().addListener(new AlgorithmSearchProgressChartListener("output/poc.png"));
+        //vra.getAlgorithmListeners().addListener(new AlgorithmSearchProgressChartListener("output/poc.png"));
         Collection<VehicleRoutingProblemSolution> solutions = vra.searchSolutions();
 
         SolutionPrinter.print(Solutions.bestOf(solutions));
@@ -123,6 +123,7 @@ public class VRPexample {
         String longi = match2.split(",")[0];
         String lati = match2.split(",")[1];
         return Location.newInstance(Double.parseDouble(longi),Double.parseDouble(lati));
+        //return Location.newInstance(6.54848,46.62047);
     }
     public static double get_random_long_lat(String country, Random rand,Boolean lon){
         double max_lon, min_lon, max_lat, min_lat;

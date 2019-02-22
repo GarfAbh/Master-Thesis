@@ -1,6 +1,7 @@
 
 
 import java.io.BufferedReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -27,11 +28,10 @@ import com.graphhopper.jsprit.util.Examples;
 
 import java.util.Collection;
 import java.util.Random;
-import java.util.regex.*;
 
 
 public class VRPexample {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Examples.createOutputFolder();
 
         VehicleRoutingProblem.Builder vrpBuilder = VehicleRoutingProblem.Builder.newInstance();
@@ -43,10 +43,11 @@ public class VRPexample {
          * args[2] = lausanne VS switzerland
          * args[3] = random de time windowed or not
          * args[4] = la seed pour le random.
+         * args[5] = nombre d'iteration (profondeur de la recherche).
          */
-        if(args.length != 5){
+        if(args.length != 6){
             System.out.println("y a un soucis avec les argument il en faut 5");
-            System.out.println("usage : ./poc [nb_job] [nb_threads][Lausanne/Swiss] [true/false] [seed]");
+            System.out.println("usage : ./poc [nb_job] [nb_threads][Lausanne/Swiss] [true/false] [seed] [profondeur recherche]");
         }
 
         int nb_jobs = Integer.parseInt(args[0]);
@@ -57,12 +58,21 @@ public class VRPexample {
         set_vehicle(vrpBuilder);
         set_jobs(vrpBuilder,nb_jobs,country_test,ra,rand);
 
+        StopWatch sw = new StopWatch();
         VehicleRoutingProblem vrp = vrpBuilder.build();
         VehicleRoutingAlgorithm vra = Jsprit.Builder.newInstance(vrp).setProperty(Jsprit.Parameter.THREADS,args[1]).buildAlgorithm();
-        vra.getAlgorithmListeners().addListener(new StopWatch(),VehicleRoutingAlgorithmListeners.Priority.HIGH);
+        vra.setMaxIterations(Integer.parseInt(args[5]));
+        vra.getAlgorithmListeners().addListener(sw,VehicleRoutingAlgorithmListeners.Priority.HIGH);
         //vra.getAlgorithmListeners().addListener(new AlgorithmSearchProgressChartListener("output/poc.png"));
         Collection<VehicleRoutingProblemSolution> solutions = vra.searchSolutions();
+        FileWriter out = new FileWriter("time.csv",true);
+        out.append(sw.toString());
+        out.append("\n");
+        out.close();
 
+        //TODO il faut faire un truc pour que le module stopwatch il aille mettre sont temps dans mon ficher car c'est ca qu'on veut.
+        System.out.println(sw.toString());
+        //TODO c'est bien ca que je veux et du coup il faut simplement que je le put dans un ficher a part imo que je récuperer à la fin et ca vas bien ce passer.
         SolutionPrinter.print(Solutions.bestOf(solutions));
     }
 
@@ -86,16 +96,14 @@ public class VRPexample {
         vrpBuilder.addVehicle(vehicle);
     }
     //permet de set les jobs du problème.
-    public static void set_jobs(VehicleRoutingProblem.Builder vrpBuilder,int nb_jobs,String country,Boolean ra,Random rand) throws IOException {
+    public static void set_jobs(VehicleRoutingProblem.Builder vrpBuilder,int nb_jobs,String country,Boolean ra,Random rand) throws IOException, InterruptedException {
         for (int i = 0 ; i < nb_jobs ; i++){
             if(rand.nextInt(101) <= 20 && ra){
-                //TODO set avec une time window
                 Service.Builder serviceBuilder = Service.Builder.newInstance(Integer.toString(i));
                 serviceBuilder.setLocation(get_random_addr(country,rand));
                 Service service = serviceBuilder.build();
                 vrpBuilder.addJob(service);
             }else{
-                //TODO set sans time window
                 Service.Builder serviceBuilder = Service.Builder.newInstance(Integer.toString(i));
                 serviceBuilder.setLocation(get_random_addr(country,rand));
                 serviceBuilder.addTimeWindow(TimeWindow.newInstance(28800,36000));
@@ -104,7 +112,7 @@ public class VRPexample {
             }
         }
     }
-    public static Location get_random_addr(String country,Random rand) throws IOException {
+    public static Location get_random_addr(String country,Random rand) throws IOException, InterruptedException {
         double lon, lat;
 
 

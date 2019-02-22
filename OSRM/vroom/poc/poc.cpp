@@ -214,9 +214,9 @@ void random_addr_generator(double *long_lat,string zone) {
       // long_lat[0] = 6.54848;
       // long_lat[1] = 46.62047;
     }
+  }
 
 double random_long_lat_generator(std::string ll, string zone) {
-
     double max_lon, max_lat, min_lon, min_lat;
     if(zone.compare("lausanne") == 0){
       max_lon = 6.732;

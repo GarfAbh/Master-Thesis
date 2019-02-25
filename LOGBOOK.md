@@ -204,3 +204,7 @@ Resume table : <https://docs.google.com/spreadsheets/d/1nqe-WgKlpyFsKYEEa1XLbwym
 # W3D5
 
 As after all presentation it's the cleaning repo day. Also seting up the new todo list to work on and start working on it by the first easy stuff to do keeping the biggest work for the next week.
+
+# W4D5
+
+Today I start the qualittativ test on OSRM + Vroom. I also still wait for an answer from OSRM regarding integrate a geocoder in it (Cause it makes more sens to have one in OSRM than in vroom). Last day it was more or less clear that graphhopper has some good tool(geocoder + matrix use) but not in the open source version. Let see then if we want to use it or not.

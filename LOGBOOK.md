@@ -208,3 +208,6 @@ As after all presentation it's the cleaning repo day. Also seting up the new tod
 # W4D1
 
 Today I start the qualittativ test on OSRM + Vroom. I also still wait for an answer from OSRM regarding integrate a geocoder in it (Cause it makes more sens to have one in OSRM than in vroom). Last day it was more or less clear that graphhopper has some good tool(geocoder + matrix use) but not in the open source version. Let see then if we want to use it or not.
+
+I found the way t restrain OSRM in the administrativ boundary. This will make sur there is no corner case while going in france or in other country. Also done some qualitative test that are quit well for the moment.
+Next stage is to make a test on real data. Only issue is that we don't have long lat for that kind of data so first complete this before being able to use it.

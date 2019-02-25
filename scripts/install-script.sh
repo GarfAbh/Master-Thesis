@@ -33,8 +33,9 @@ fi
 if [ ! -e data/OSRM/switzerland ]; then
   mkdir data/OSRM/switzerland
   echo creation of swiss for OSRM
+  cp switzerland.geojson data/OSRM/switzerland
   ./OSRM/osrm-backend/build/osrm-extract data/OSM/switzerland/switzerland-latest.osm.pbf \
-  -p OSRM/osrm-backend/profiles/car.lua
+  -p OSRM/osrm-backend/profiles/car.lua --location-dependent-data=../data/OSRM/switzerland/switzerland.geojson
   mv data/OSM/switzerland/switzerland-latest.osrm* data/OSRM/switzerland
 fi
 

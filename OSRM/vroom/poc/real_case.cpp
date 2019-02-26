@@ -15,9 +15,6 @@
 #include "string.h"
 
 
-#define URL "0.0.0.0:5000/nearest/v1/driving/"
-#define END_URL "?number=1&bearing=0,0"
-
 /*
  * Il s'agit la d'un ficher test destiné a un benchmark pour de la réalité.
  * Les spécification sont les suivantes :
@@ -35,9 +32,6 @@ const int TW_JOB_PER = 20;
 
 void set_vehicule(vroom::Input *problem_instance);
 void set_jobs(int nb_jobs, vroom::Input *problem_instance, string zone, string rand);
-double random_long_lat_generator(std::string ll, string zone);
-void random_addr_generator(double *long_lat,string zone);
-size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp);
 void log_solution(const vroom::Solution& sol, bool geometry);
 
 
@@ -170,86 +164,9 @@ void set_jobs(int nb_jobs, vroom::Input *problem_instance, string zone, string r
     }
     cout << "jobs setup \n";
 }
-static size_t write_function(void *ptr, size_t size, size_t nmemb, void *userp){
-  ((std::string*)userp)->append((char*)ptr, size * nmemb);
-  return size * nmemb;
-}
-void random_addr_generator(double *long_lat,string zone) {
-    CURL* curl;
-    CURLcode sucess;
-    string buffer;
-    double lon, lat;
-    do{
-      lon = random_long_lat_generator("long",zone);
-      lat = random_long_lat_generator("lat",zone);
-      string url = "0.0.0.0:5000/nearest/v1/driving/" + to_string(lon) + "," + to_string(lat) + "?number=1&bearings=0,0";
-      curl = curl_easy_init();
-      cout << "url is : " << url << "\n";
 
-      curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-      curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_function);
-      curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
-      sucess = curl_easy_perform(curl);
-      curl_easy_cleanup(curl);
-    }while(sucess != CURLE_OK);
 
-    cout << buffer << "\n";
 
-    //regex to capture the needed information.
-    regex reg ("\\[(\\s*([^\"]*)\\s*)\\]");
-    smatch m;
-    string::const_iterator searchStart(buffer.cbegin());
-
-    for(int i = 0 ; i < 2 ; i++){
-      regex_search(searchStart,buffer.cend(),m,reg);
-      searchStart = m.suffix().first;
-    }
-
-    stringstream ss;
-    ss.str(m.str(1));
-    string token;
-    for(int i = 0 ; i < 2 ; i++){
-      getline(ss,token,',');
-      long_lat[i] = stod(token);
-      // long_lat[0] = 6.54848;
-      // long_lat[1] = 46.62047;
-    }
-
-double random_long_lat_generator(std::string ll, string zone) {
-    double max_lon, max_lat, min_lon, min_lat;
-    if(zone.compare("lausanne") == 0){
-      max_lon = 6.732;
-      min_lon = 6.5075;
-
-      max_lat = 46.5845;
-      min_lat = 46.4878;
-    }else if(zone.compare("swiss") == 0){
-      max_lon = 10.492;
-      min_lon = 5.956;
-
-      max_lat = 47.80842;
-      min_lat = 45.818;
-    }else{
-      cout << "c'est pas possible essaye encore <3";
-      max_lon = 10.492;
-      min_lon = 5.956;
-
-      max_lat = 47.80842;
-      min_lat = 45.818;
-    }
-
-    double tmp;
-    double r = double(rand()) / (double(RAND_MAX));
-    double range;
-    if (ll.compare("long") == 0) {
-        range = max_lon-min_lon;
-        tmp = r * range + min_lon;
-    } else {
-        range = max_lat - min_lat;
-        tmp = r * range + min_lat;
-    }
-    return tmp;
-}
 void log_solution(const vroom::Solution& sol, bool geometry) {
     std::cout << "Total cost: " << sol.summary.cost << std::endl;
     std::cout << "Unassigned: " << sol.summary.unassigned << std::endl;

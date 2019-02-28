@@ -204,3 +204,19 @@ Resume table : <https://docs.google.com/spreadsheets/d/1nqe-WgKlpyFsKYEEa1XLbwym
 # W3D5
 
 As after all presentation it's the cleaning repo day. Also seting up the new todo list to work on and start working on it by the first easy stuff to do keeping the biggest work for the next week.
+
+# W4D1
+
+Today I start the qualittativ test on OSRM + Vroom. I also still wait for an answer from OSRM regarding integrate a geocoder in it (Cause it makes more sens to have one in OSRM than in vroom). Last day it was more or less clear that graphhopper has some good tool(geocoder + matrix use) but not in the open source version. Let see then if we want to use it or not.
+
+I found the way t restrain OSRM in the administrativ boundary. This will make sur there is no corner case while going in france or in other country. Also done some qualitative test that are quit well for the moment.
+Next stage is to make a test on real data. Only issue is that we don't have long lat for that kind of data so first complete this before being able to use it.
+
+# W4D2
+
+Meeting with the teacher today. Everything still goes fine. Just make sure that the geocoder should be a side project depending on the data but not a whole parts of this project as this is not the same purpose. (just clearly separate the 2 things.)
+Also had a look on some real data to have a better approach for my code and also to start make some real test case.
+
+# W4D3
+
+Just a coding day no special issues. The test case poc is coming soon now that i know well the tools it's more or lesss straight forward to use it and code with it.

@@ -2,4 +2,4 @@
 
 cd ..
 
-./GraphHopper/graphhopper/graphhopper.sh -a web -i ./data/GraphHopper/switzerland/switzerland-latest.osm.pbf -o swiss-gh
+./Graphhopper/graphhopper/graphhopper.sh -a web -i ./data/GraphHopper/switzerland/switzerland-latest.osm.pbf

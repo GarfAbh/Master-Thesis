@@ -160,10 +160,63 @@ Issue of the day was working with libcurl that is not that easy to understand. T
 
 # W3D1
 
-### Relevant link :
+
 
 I started to put my thougth on each tool in a resume table available in the relevant link part. I also make script ... to get some statistics from the OSRM + Vroom POC. Still need to analyse and make beautiful graph ...
 Still need to do the same with graphhopper and jsprit.
 
+### Relevant link :
+
 Resume table : <https://docs.google.com/spreadsheets/d/1nqe-WgKlpyFsKYEEa1XLbwym1JEsX-8OC5GJM5zoBXc/edit#gid=0>
 Performance stats : <https://docs.google.com/spreadsheets/d/1uCsiI2CiCoS5z6I_O5LnAgnBi8EK8CnKl3NOUeQjpcQ/edit#gid=696287079>
+
+# W3D2
+
+I've done the POC for graphHopper + Jsprit it runs still need to figure some function that could not be use in order to have something comparable with OSRM + vroom. I figure out that it would be possible to use parallelism work so I will update my performance test to work between 1 and 64 threads and see which is better. I will also update the perf test for Vroom + OSRM.
+
+### Relevant link :
+
+Performance stats : <https://docs.google.com/spreadsheets/d/14h6lwvHTuU6UD3Tn3puHuVa4lB2KTFjQrSSrcxXTK0U/edit>
+
+# W3D3
+
+I should finish the whole test of both tools with POC files compared in the resume table and both performance test in the drive too.
+Finally got issues with Jsprit and Graphhopper. Some internal server error make me realize that graphopper literaly consider a country and not a til when it work on a map. Instead of OSRM that use the entire tile and do not return error if you are out of bound.
+
+So I had to change my test to be able to get something more close between those 2 tools.
+Other issue but here I don't knoe why it's happening. Jsprit + graphhopper is long tu use for multiple run. There is a kind of wait delay of 1 sec (or more) between each run which make 20 000 different run for performance really long !
+Probably will try to running it at night.
+
+### Relevant link :
+
+Resume table : <https://docs.google.com/spreadsheets/d/1nqe-WgKlpyFsKYEEa1XLbwym1JEsX-8OC5GJM5zoBXc/edit#gid=0>
+Performance stats Vroom + OSRM : <https://docs.google.com/spreadsheets/d/1uCsiI2CiCoS5z6I_O5LnAgnBi8EK8CnKl3NOUeQjpcQ/edit#gid=696287079>
+Performance stats Jsprit + Graphhopper : <https://docs.google.com/spreadsheets/d/14h6lwvHTuU6UD3Tn3puHuVa4lB2KTFjQrSSrcxXTK0U/edit>
+
+# W3D4
+
+Today I'm presenting my work to my chief. Unfortunately the runs during the nigth didn't gone well. Which make me try to run again this morning. But I don't expect to have it done before the presentation. The presentation is done everything is ok. Still have to explore a bit graphhopper + jsprit to make sur that what I pointed out in my resume table is correct. Also now i'll ask to the dev if a geocoder could interest them and also make some qualittativ test.
+
+### Relevant link :
+
+Resume table : <https://docs.google.com/spreadsheets/d/1nqe-WgKlpyFsKYEEa1XLbwym1JEsX-8OC5GJM5zoBXc/edit#gid=0>
+
+# W3D5
+
+As after all presentation it's the cleaning repo day. Also seting up the new todo list to work on and start working on it by the first easy stuff to do keeping the biggest work for the next week.
+
+# W4D1
+
+Today I start the qualittativ test on OSRM + Vroom. I also still wait for an answer from OSRM regarding integrate a geocoder in it (Cause it makes more sens to have one in OSRM than in vroom). Last day it was more or less clear that graphhopper has some good tool(geocoder + matrix use) but not in the open source version. Let see then if we want to use it or not.
+
+I found the way t restrain OSRM in the administrativ boundary. This will make sur there is no corner case while going in france or in other country. Also done some qualitative test that are quit well for the moment.
+Next stage is to make a test on real data. Only issue is that we don't have long lat for that kind of data so first complete this before being able to use it.
+
+# W4D2
+
+Meeting with the teacher today. Everything still goes fine. Just make sure that the geocoder should be a side project depending on the data but not a whole parts of this project as this is not the same purpose. (just clearly separate the 2 things.)
+Also had a look on some real data to have a better approach for my code and also to start make some real test case.
+
+# W4D3
+
+Just a coding day no special issues. The test case poc is coming soon now that i know well the tools it's more or lesss straight forward to use it and code with it.

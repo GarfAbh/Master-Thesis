@@ -7,30 +7,32 @@
 #include "utils/exception.h"
 #include "util.h"
 
+
 using namespace std;
 
-void set_vehicule(vroom::Input *problem_instance,vector<vroom::Vehicle> vehicles, string vehicle_filename);
-void set_jobs(vroom::Input *problem_instance,vector<vroom::Job> jobs, string job_filename);
+void set_vehicule(vroom::Input *problem_instance,vector<vroom::Vehicle>* vehicles, string vehicle_filename);
+void set_jobs(vroom::Input *problem_instance,vector<vroom::Job>* jobs, string job_filename);
 void log_solution(const vroom::Solution& sol, bool geometry);
 
-int main(int argc, char *argv[]) {
-  //TODO faudras pas oublier de creer un ficher test pour le vehicule histoire
-  //de le tester en kind of real condition.
+int main(int argc, const char *argv[]) {
+  Debug::init(argc,argv);
+
   if(argc != 4){
-    cout << "main wrong number of argument :" << argc-1 << endl;
+    cout << "main wrong number of argument : " << argc-1 << endl;
     cout << "usage : " << endl;
-    cout << "./test jobs.csv vehicle.csv output_file";
+    cout << "./test jobs.csv vehicle.csv output_file" << endl;
+    return -1;
   }
   string input_job_filename = argv[1],
          input_vehicle_filename = argv[2],
          output_filename = argv[3];
 
   // Set OSRM host and povoid set_vehicule(vroom::Input *problem_instance,vector<vroom::Vehicle> vehicles, string vehicle_filename)rt.
-  cout << "set OSRM host and port" << endl;
+  debug << "set OSRM host and port";
   auto routing_wrapper = make_unique<vroom::routing::RoutedWrapper>
   ("car",vroom::Server("localhost", "5000"));
 
-  cout << "set vroom Input" << endl;
+  debug << "set vroom Input";
   vroom::Input problem_instance;
   problem_instance.set_routing(move(routing_wrapper));
 
@@ -38,17 +40,17 @@ int main(int argc, char *argv[]) {
   bool GEOMETRY = true;
   problem_instance.set_geometry(GEOMETRY); // Query for route geometry
   // after solving.
-  cout << "set the vehicules" << endl;
+  debug << "set the vehicules";
   vector<vroom::Vehicle> vehicles;
-  set_vehicule(&problem_instance,vehicles,input_vehicle_filename);
+  set_vehicule(&problem_instance,&vehicles,input_vehicle_filename);
 
-  cout << "set the jobs" << endl;
+  debug << "set the jobs";
   vector<vroom::Job> jobs;
-  set_jobs(&problem_instance,jobs,input_job_filename);
+  set_jobs(&problem_instance,&jobs,input_job_filename);
 
   // Solve!
   try {
-    cout << "trying to solve the problem" << endl;
+    debug << "trying to solve the problem";
     auto sol = problem_instance.solve(5, 4);
     // Use argv[2] lvl expl and argv[3] threads.
     log_solution(sol, GEOMETRY);
@@ -57,19 +59,26 @@ int main(int argc, char *argv[]) {
   }
 
   //TODO une fois la solution trouver ecrire la solution dans un nouveau ficher.
-  writer(output_filename);
+  //writer(output_filename);
   return 0;
 }
 
 void set_vehicule(vroom::Input *problem_instance,vector<vroom::Vehicle>* vehicles, string vehicle_filename) {
-  //TODO feras appel a read special pour véhicule (quand ca sera le cas)
+  debug << "read : " << vehicle_filename;
   reader(vehicle_filename,"vehicle",NULL,vehicles);
-
+  debug << "vehicle size : " << vehicles->size();
+  for(auto v : *vehicles){
+    problem_instance->add_vehicle(v);
+  }
 }
 void set_jobs(vroom::Input *problem_instance,vector<vroom::Job>* jobs, string job_filename) {
+  debug << "read : " << job_filename;
   reader(job_filename,"job",jobs,NULL);
+  debug << "jobs size : " << jobs->size();
+  for(auto j : *jobs){
+    problem_instance->add_job(j);
+  }
 }
-
 void log_solution(const vroom::Solution& sol, bool geometry) {
   std::cout << "Total cost: " << sol.summary.cost << std::endl;
   std::cout << "Unassigned: " << sol.summary.unassigned << std::endl;

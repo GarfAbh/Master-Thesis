@@ -17,6 +17,9 @@
 #include "structures/vroom/job.h"
 #include "structures/vroom/vehicle.h"
 
+//internal code
+#include "debug.h"
+
 void reader(std::string filename,
             std::string kind,
             std::vector<vroom::Job>* jobs,

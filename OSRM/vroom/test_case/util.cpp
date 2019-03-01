@@ -26,16 +26,19 @@ void reader(string filename,string kind,vector<vroom::Job>* jobs,vector<vroom::V
    //TODO faut faire attention à cela ca peut être dangereux il faut bien être
    //sur du format des donnée qui sont passé en argument à tout moment !
    if(first_line){
+     debug << "just jump out the first line";
      first_line = false;
      continue;
    }
    split(row,line, [](char c){
-     return c == ',';
+     return c == ';';
    });
    if(kind.compare("job") == 0){
+     debug << "let's create a new job :" << line;
      vroom::Job job = create_new_job(row);
      jobs->push_back(job);
    }else if(kind.compare("vehicle") == 0 ){
+     debug << "let's create a new vehicle :" << line;
      vroom::Vehicle v = create_new_vehicle(row);
      vehicles->push_back(v);
    }else{
@@ -72,14 +75,14 @@ vroom::Vehicle create_new_vehicle(vector<string> vehicle_param){
   //28800s = 8h; 61200 = 17h
   //TODO faire une fonction qui prent start time et le traduit en seconde.
   //il faut aussi penser que ce seras une variable pour l'avenir.
-  vroom::TimeWindow vehicle_tw(0,61200);
+  vroom::TimeWindow vehicle_tw(21600,61200);
 
   //46.50190,6.68973 coordinate of Altux
   //46.50910,6.64357 coordinate of my home
   vroom::Location depot(vroom::Coordinates({{6.68973, 46.50190}}));
   vroom::Location house(vroom::Coordinates({{6.64357, 46.50910}}));
 
-  return vroom::Vehicle(stoul(id_tour),depot,house,vehicle_capacity,{},vehicle_tw);
+  return vroom::Vehicle(stoul(id_tour),depot,depot,vehicle_capacity,{},vehicle_tw);
 }
 vroom::Job create_new_job(vector<string> job_param){
   //TODO faire de la vérification de paramètre si jamais longitude latitude
@@ -108,10 +111,11 @@ vroom::Job create_new_job(vector<string> job_param){
   //TODO ca aussi ca sera une variable mais pour l'instant on reste sur une constante.
   vroom::Amount job_amount(1);
   job_amount[0] = 1;
-
   vroom:: Coordinates coo = vroom::Coordinates({{stod(longitude),stod(latitude)}});
 
   return vroom::Job(stoul(job_id),coo,service,job_amount,{});
 }
 void writer(string filename){
+  //TODO ici je veut ecrire la solution dans un ficher en mode csv.
+  //ca devrais bien ce passe je peut tester dans le write
 }

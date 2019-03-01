@@ -220,3 +220,12 @@ Also had a look on some real data to have a better approach for my code and also
 # W4D3
 
 Just a coding day no special issues. The test case poc is coming soon now that i know well the tools it's more or lesss straight forward to use it and code with it.
+
+# W4D4
+
+Continuing to code the poc. Some bug correcting nothing special no coding issue for the moment.
+
+# W4D5
+
+Now I have a functionnal version of the poc. Working on file given in input style have to implement the output part and also make the output more fancy to read and compare with the original data.
+Added a usefull debugger for the whole project it will make the life much more easier while having potential seg fault or any other bugs.

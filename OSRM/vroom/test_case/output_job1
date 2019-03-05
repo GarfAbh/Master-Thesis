@@ -19,6 +19,8 @@ Steps for vehicle 601
  Job 1009766 - arrival: 13:54:00 - duration: 4:50:0 - service: 0:17:0
  - duration: 4:50:0 - service: 3:21:0 - no distance data
 
+Le trajet effectué par le chauffer est faisable en 2h58
+
 Total cost: 5:50:42
 Unassigned: 0
 Steps for vehicle 601 - duration: 1:50:42 - service: 4:0:0 - distance: 86.302000km

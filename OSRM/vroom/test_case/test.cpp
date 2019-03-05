@@ -40,10 +40,12 @@ int main(int argc, const char *argv[]) {
   debug << "set the vehicules";
   vector<vroom::Vehicle> vehicles;
   set_vehicule(&problem_instance,&vehicles,input_vehicle_filename);
+  debug << "vehicle size : " << vehicles.size();
 
   debug << "set the jobs";
   vector<vroom::Job> jobs;
   set_jobs(&problem_instance,&jobs,input_job_filename);
+  debug << "jobs size : " << jobs.size();
 
   // Solve!
   try {

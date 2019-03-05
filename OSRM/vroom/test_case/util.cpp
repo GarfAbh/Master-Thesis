@@ -171,6 +171,11 @@ void writer(string filename,const vroom::Solution& sol, bool geometry){
         file << " " << step.job;
       }
 
+      //uniquement pour me simplifier la vie pour l'output et avoir des jolie data tirer de OSRM a montrer.
+      //if (step.location.has_coordinates()) {
+      //    file << " - " << step.location.lon() << ";" << step.location.lat();
+      //}
+
       file << " - arrival: " << sec_to_formated_string(step.arrival);
       file << " - duration: " << sec_to_formated_string(step.duration);
       file << " - service: " << sec_to_formated_string(step.service);
@@ -184,40 +189,64 @@ void writer(string filename,const vroom::Solution& sol, bool geometry){
   }
   file.close();
 }
+
+//ce code la est dégueulasse c'est exprès puisqu'il n'a aucune raison d'être !!!
+// la seul raisons qu'il à d'exister c'est d'avoir un jolie input a lire pour comparer.
+// seulement pour la version final il n'a aucun interet (valeur hardcodé ... pas de verification ...).
+
 void format_input(vector<vroom::Job>* jobs,
                   vector<vroom::Vehicle>* vehicles,
                   string output_filename){
+  debug << "vehicle size : " << vehicles->size();
+  debug << "jobs size : " << jobs->size();
   ofstream file;
-  file.open(output_filename,ios_base::app);
+  file.open(output_filename/*,ios_base::app*/);
   //faut que je le compute avec les datas.
   file << "Total cost: " << sec_to_formated_string(total_cost()) << endl;
   //on en a forcement 0 sur cette tournée puisque l'on est sur des tournée
   //qui ont eux lieu.
   file << "Unassigned: " << 0 << endl;
-
+  int tot_service = 0 ;
   for(auto v : *vehicles){
+    debug << vehicles;
     //faut remplir encore ici les datas
     file << "Steps for vehicle " << v.id;
-    file << " - duration: " << endl;
-    file << " - service: " << endl;
-    file << " - no distance data";
     file << endl;
 
     //faudras surement changer la boucle for qu'il y a ici pour
     //parcourir les tableaux en même temps.
     int current_duration = 0 ;
-    for(auto j : *jobs){
-      //TODO y a une erreur ici il faut explorer.
+    for(auto j : *jobs | indexed(0)){
       debug << jobs;
-      current_duration += string_to_sec(get_arrival(j.index()));
-      file << " Job";
+      debug << "current_duration before is : " << current_duration;
+      //c'est le j.index qui pose une bonne grosse merde.
+      //quand je start à 0 c'est depuis mon point de départ jusqu'a l'arriver du premier point
+      if(j.index() == 0 ){
+        current_duration += string_to_sec(get_arrival(j.index())) - (*vehicles)[0].tw.start;
+      }else{
+        current_duration += string_to_sec(get_arrival(j.index())) - string_to_sec(get_departur(j.index()-1));
+      }
+
+      debug << "current_duration after is : " << current_duration;
+      file << " Job " << j.value().id;
       file << " - arrival: " << get_arrival(j.index());
       file << " - duration: " << sec_to_formated_string(current_duration);
       file << " - service: " << sec_to_formated_string(service_time(j.index()));
+      tot_service += service_time(j.index());
+      file << endl;
       //ici je met tout les jobs.
-
     }
+
+    //il faut ici que je mette le total duration pour le vehicle
+    file << " - duration: " << sec_to_formated_string(current_duration);
+    //il faut que je mette ici le total de service pour le vehicle
+    file << " - service: " << sec_to_formated_string(tot_service);
+    //j'ai pas la data sur la distance parcouru je pourrais faire l'effort de
+    //voir via OSRM mais ca ferais beaucoup d'effort pour pas beaucoup d'utilité
+    file << " - no distance data";
+    file << endl;
   }
+  file << endl;
 
 
   //INSERT CODE HERE
@@ -232,11 +261,17 @@ string sec_to_formated_string(int nb_sec){
   int sec = nb_sec % 3600 % 60;
   return to_string(heure) + ":" + to_string(min) + ":" + to_string(sec);
 }
-int string_to_sec(string duraction){
+int string_to_sec(string duration){
+  debug << "duration is " << duration;
   vector<string> time;
-  split(time,duraction, [](char c){
+  split(time,duration, [](char c){
     return c == ':';
   });
+  debug << "time size is " << time.size();
+  debug << "time[0] is : " << atoi(time[0].c_str());
+  debug << "time[1] is : " << atoi(time[1].c_str());
+  debug << "time[2] is : " << atoi(time[2].c_str());
+  debug << "total in sec is : " << atoi(time[0].c_str()) * 3600 + atoi(time[1].c_str()) * 60 + atoi(time[2].c_str());
   return atoi(time[0].c_str()) * 3600 + atoi(time[1].c_str()) * 60 + atoi(time[2].c_str());
 }
 string format_distance(int nb_m){
@@ -251,7 +286,12 @@ int service_time(int index){
   return string_to_sec(get<1>(start_stop_tuple[index])) - string_to_sec(get<0>(start_stop_tuple[index]));
 }
 string get_arrival(int index){
+  debug << "index is : " << index;
   return get<0>(start_stop_tuple[index]);
+}
+string get_departur(int index){
+  debug << "index is : " << index;
+  return get<1>(start_stop_tuple[index]);
 }
 // voir si y a s d'autre data interessante a print de facon fancy et donc prévoir les fonctions qui vont bien.
 //genre la distance qui est censé être en m

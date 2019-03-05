@@ -43,3 +43,4 @@ std::string format_distance(int nb_m);
 int total_cost();
 int service_time(int index);
 std::string get_arrival(int index);
+std::string get_departur(int index);

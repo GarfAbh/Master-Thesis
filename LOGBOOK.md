@@ -229,3 +229,12 @@ Continuing to code the poc. Some bug correcting nothing special no coding issue 
 
 Now I have a functionnal version of the poc. Working on file given in input style have to implement the output part and also make the output more fancy to read and compare with the original data.
 Added a usefull debugger for the whole project it will make the life much more easier while having potential seg fault or any other bugs.
+
+# W5D1
+
+I added some functionnality to format the input and be sure that this is comparable with my output. Finished the day on a seg fault and will correct this tomorrow.
+
+# W5D2
+
+Everything is corrected now i have to present the result. Probably will do this on W5D4.
+While waiting will start to write the thesis.

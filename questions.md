@@ -41,3 +41,6 @@ De plus A* Vs Dijkstra, je vois bien la différence entre les deux mais je me de
 
 ### Reponse 6
 C'est tout bon maintenant.
+
+### Question 7
+Quel est le ton que je doit / peut prendre dans ma thèse ? Je suis face à la rédaction de l'introduction et le syndrome de la pages blanche est présent ?

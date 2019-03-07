@@ -214,9 +214,13 @@ void random_addr_generator(double *long_lat,string zone) {
       // long_lat[0] = 6.54848;
       // long_lat[1] = 46.62047;
     }
+<<<<<<< HEAD:POC/poc/poc.cpp
 }
-double random_long_lat_generator(std::string ll, string zone) {
+=======
+  }
 
+>>>>>>> 3e128b0f7a1866c0d6f559858e14c2ae72de1c51:OSRM/vroom/poc/poc.cpp
+double random_long_lat_generator(std::string ll, string zone) {
     double max_lon, max_lat, min_lon, min_lat;
     if(zone.compare("lausanne") == 0){
       max_lon = 6.732;

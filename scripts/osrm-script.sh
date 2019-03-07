@@ -25,10 +25,3 @@ cd example-1
 cmake . ../example/
 make osrm-example
 cd ../../..
-
-#run the example
-echo
-echo example runs and output is : ==============================================
-echo
-./OSRM/osrm-backend/example-1/osrm-example data/OSRM/monaco/monaco-latest.osrm
-echo

@@ -238,3 +238,15 @@ I added some functionnality to format the input and be sure that this is compara
 
 Everything is corrected now i have to present the result. Probably will do this on W5D4.
 While waiting will start to write the thesis.
+
+# W5D3
+
+Still working on the thesis.
+
+# W5D4
+
+Finally the meeting is for W5D5 so working on the thesis
+
+# W5D5
+
+Today is meeting day. I cleaned up the repo to keep only OSRM and Vroom also cleaned it to make sur that everything works fine (instalation script ...) push it on the code review of the entreprise.

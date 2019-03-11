@@ -250,3 +250,7 @@ Finally the meeting is for W5D5 so working on the thesis
 # W5D5
 
 Today is meeting day. I cleaned up the repo to keep only OSRM and Vroom also cleaned it to make sur that everything works fine (instalation script ...) push it on the code review of the entreprise.
+
+# W6D1
+
+Correcting my first commit and working on the thesis. Waiting for data to do the next step for the testing.

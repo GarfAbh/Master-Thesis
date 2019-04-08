@@ -254,3 +254,13 @@ Today is meeting day. I cleaned up the repo to keep only OSRM and Vroom also cle
 # W6D1
 
 Correcting my first commit and working on the thesis. Waiting for data to do the next step for the testing.
+
+# Paused in the logbook
+
+As in the title i made a pause in the logbook cause there is nothing to add for the moment.
+
+I'm working on the industrie part puting my code in an operational part. Which means coding some server parts ...
+Testing but no research for the moment.
+I also continued to work on the thesis.
+
+I'll be back as soon as the research are interesting to be put there

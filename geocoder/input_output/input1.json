@@ -1,0 +1,18 @@
+[
+  {
+    "ID":"1",
+    "address":"Avenue C-F Ramuz 95, 1009 Pully"
+  },
+  {
+    "ID":"2",
+    "address":"Bärengasse 16, 8001 Zürich"
+  },
+  {
+    "ID":"3",
+    "address": "Schifflaube 16, 3011 Bern"
+  },
+  {
+    "ID":"4",
+    "address": "petersgraben 71, 4051 Basel"
+  }
+]

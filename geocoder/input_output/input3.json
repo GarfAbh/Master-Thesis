@@ -1,0 +1,32 @@
+[
+  {
+    "ID":"1",
+    "address":"Avenue C-F Ramuz 95, 1009 Pully"
+  },
+  {
+    "ID" : "2",
+    "rue":"Bärengasse 16",
+    "NPA":"8001",
+    "ville":"Zürich"
+  },
+  {
+    "ID":"3",
+    "address":"Bärengasse 16, 8001 Zürich"
+  },
+  {
+    "ID" : "4",
+    "rue":"Avenue C-F Ramuz 95",
+    "NPA":"1009",
+    "ville":"Pully"
+  },
+  {
+    "ID":"5",
+    "address": "Schifflaube 16, 3011 Bern"
+  },
+  {
+    "ID" : "6",
+    "rue":"Schifflaube 16",
+    "NPA":"3011",
+    "ville":"Bern"
+  }
+]

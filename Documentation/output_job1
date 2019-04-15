@@ -1,0 +1,44 @@
+Total cost: 8:11:0
+Unassigned: 0
+Steps for vehicle 601
+ Job 48968 - arrival: 06:34:00 - duration: 0:34:0 - service: 0:12:0
+ Job 48204 - arrival: 06:51:00 - duration: 0:39:0 - service: 0:21:0
+ Job 48222 - arrival: 07:30:00 - duration: 0:57:0 - service: 0:15:0
+ Job 1009612 - arrival: 08:05:00 - duration: 1:17:0 - service: 0:8:0
+ Job 50026 - arrival: 08:38:00 - duration: 1:42:0 - service: 0:16:0
+ Job 47754 - arrival: 09:01:00 - duration: 1:49:0 - service: 0:11:0
+ Job 1010011 - arrival: 09:25:00 - duration: 2:2:0 - service: 0:4:0
+ Job 1010172 - arrival: 09:42:00 - duration: 2:15:0 - service: 0:24:0
+ Job 49720 - arrival: 10:13:00 - duration: 2:22:0 - service: 0:4:0
+ Job 50149 - arrival: 10:40:00 - duration: 2:45:0 - service: 0:8:0
+ Job 1008740 - arrival: 10:52:00 - duration: 2:49:0 - service: 0:12:0
+ Job 1011666 - arrival: 11:30:00 - duration: 3:15:0 - service: 0:14:0
+ Job 1009318 - arrival: 11:49:00 - duration: 3:20:0 - service: 0:20:0
+ Job 1009435 - arrival: 13:10:00 - duration: 4:21:0 - service: 0:10:0
+ Job 1007372 - arrival: 13:28:00 - duration: 4:29:0 - service: 0:5:0
+ Job 1009766 - arrival: 13:54:00 - duration: 4:50:0 - service: 0:17:0
+ - duration: 4:50:0 - service: 3:21:0 - no distance data
+
+Le trajet effectué par le chauffer est faisable en 2h58
+
+Total cost: 5:50:42
+Unassigned: 0
+Steps for vehicle 601 - duration: 1:50:42 - service: 4:0:0 - distance: 86.302000km
+Start - arrival: 6:0:0 - duration: 0:0:0 - service: 0:0:0 - distance: 0.000000km
+Job 1008740 - arrival: 6:27:33 - duration: 0:27:33 - service: 0:15:0 - distance: 27.122000km
+Job 50149 - arrival: 6:44:1 - duration: 0:29:1 - service: 0:15:0 - distance: 27.695000km
+Job 50026 - arrival: 7:17:58 - duration: 0:47:58 - service: 0:15:0 - distance: 42.592000km
+Job 47754 - arrival: 7:38:47 - duration: 0:53:47 - service: 0:15:0 - distance: 47.055000km
+Job 49720 - arrival: 7:59:54 - duration: 0:59:54 - service: 0:15:0 - distance: 52.318000km
+Job 1010172 - arrival: 8:19:8 - duration: 1:4:8 - service: 0:15:0 - distance: 55.837000km
+Job 1010011 - arrival: 8:41:25 - duration: 1:11:25 - service: 0:15:0 - distance: 61.713000km
+Job 1011666 - arrival: 9:11:43 - duration: 1:26:43 - service: 0:15:0 - distance: 73.949000km
+Job 1009318 - arrival: 9:27:39 - duration: 1:27:39 - service: 0:15:0 - distance: 74.479000km
+Job 1007372 - arrival: 9:44:1 - duration: 1:29:1 - service: 0:15:0 - distance: 75.080000km
+Job 48222 - arrival: 10:0:30 - duration: 1:30:30 - service: 0:15:0 - distance: 75.648000km
+Job 48968 - arrival: 10:17:29 - duration: 1:32:29 - service: 0:15:0 - distance: 76.707000km
+Job 1009435 - arrival: 10:33:17 - duration: 1:33:17 - service: 0:15:0 - distance: 77.153000km
+Job 48204 - arrival: 10:48:24 - duration: 1:33:24 - service: 0:15:0 - distance: 77.229000km
+Job 1009766 - arrival: 11:9:18 - duration: 1:39:18 - service: 0:15:0 - distance: 79.934000km
+Job 1009612 - arrival: 11:27:2 - duration: 1:42:2 - service: 0:15:0 - distance: 80.968000km
+End - arrival: 11:50:42 - duration: 1:50:42 - service: 0:0:0 - distance: 86.302000km

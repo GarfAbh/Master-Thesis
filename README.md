@@ -24,14 +24,14 @@ You have to optimize the delivery system for a fleet of truck starting from A go
 
 ### Step 2
 
--  [ ] Developing the routing management system
--  [ ] From A to B with multiple inside points
--  [ ] Time management
+-  [x] Developing the routing management system
+-  [x] From A to B with multiple inside points
+-  [x] Time management
 
 ### Step 3
 
--  [ ] Stop time management
--  [ ] Time of passage.
+-  [x] Stop time management
+-  [x] Time of passage.
        Some machine may only be accessible at some precise time during the day
     ### Step 4
 -  [ ] Validation of theoritical data

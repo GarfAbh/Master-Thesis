@@ -1,0 +1,2612 @@
+[
+  {
+    "unassigned": [
+      {
+        "id": 49720
+      },
+      {
+        "id": 1011666
+      },
+      {
+        "id": 1007372
+      },
+      {
+        "id": 50026
+      },
+      {
+        "id": 48204
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:21:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          11
+        ],
+        "vehicle": 601,
+        "duration": "2:37:13",
+        "cost": "2:37:13",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 50149,
+            "waiting_time": "0:00:00",
+            "arrival": "23:41:03",
+            "location": [
+              6.798389,
+              46.669465
+            ],
+            "duration": "0:29:03",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:12:45",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:52:45",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:39:58",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:55:58",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "0:55:27",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "1:00:27",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "1:42:54",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:43:54",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:30:37",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:23:37",
+            "type": "job"
+          },
+          {
+            "service": "0:20:00",
+            "job": 1009318,
+            "waiting_time": "0:00:00",
+            "arrival": "2:53:46",
+            "location": [
+              6.6316961,
+              46.5205435
+            ],
+            "duration": "2:29:46",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "3:15:11",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:31:11",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:32:10",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:33:10",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:44:58",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:33:58",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:37:13",
+            "type": "end",
+            "arrival": "3:58:13"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:21:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        11
+      ],
+      "computing_times": {
+        "solving": 18,
+        "loading": 7
+      },
+      "duration": "2:37:13",
+      "cost": "2:37:13"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 49720
+      },
+      {
+        "id": 1011666
+      },
+      {
+        "id": 1007372
+      },
+      {
+        "id": 1009318
+      },
+      {
+        "id": 48204
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:17:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          11
+        ],
+        "vehicle": 601,
+        "duration": "2:40:15",
+        "cost": "2:40:15",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 50149,
+            "waiting_time": "0:00:00",
+            "arrival": "23:41:03",
+            "location": [
+              6.798389,
+              46.669465
+            ],
+            "duration": "0:29:03",
+            "type": "job"
+          },
+          {
+            "service": "0:16:00",
+            "job": 50026,
+            "waiting_time": "0:00:00",
+            "arrival": "0:08:03",
+            "location": [
+              6.6844064,
+              46.6272983
+            ],
+            "duration": "0:48:03",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:29:52",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:53:52",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:44:06",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:57:06",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "1:15:23",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "1:04:23",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "2:02:50",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:47:50",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:50:33",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:27:33",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "3:14:13",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:34:13",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:31:12",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:36:12",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:44:00",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:37:00",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:40:15",
+            "type": "end",
+            "arrival": "3:57:15"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:17:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        11
+      ],
+      "computing_times": {
+        "solving": 20,
+        "loading": 7
+      },
+      "duration": "2:40:15",
+      "cost": "2:40:15"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 49720
+      },
+      {
+        "id": 1011666
+      },
+      {
+        "id": 1007372
+      },
+      {
+        "id": 1009318
+      },
+      {
+        "id": 50026
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:22:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          11
+        ],
+        "vehicle": 601,
+        "duration": "2:36:20",
+        "cost": "2:36:20",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 50149,
+            "waiting_time": "0:00:00",
+            "arrival": "23:41:03",
+            "location": [
+              6.798389,
+              46.669465
+            ],
+            "duration": "0:29:03",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:12:45",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:52:45",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:39:58",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:55:58",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "0:55:27",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "1:00:27",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "1:42:54",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:43:54",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:30:37",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:23:37",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "2:54:17",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:30:17",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:11:16",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:32:16",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:24:04",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:33:04",
+            "type": "job"
+          },
+          {
+            "service": "0:21:00",
+            "job": 48204,
+            "waiting_time": "0:00:00",
+            "arrival": "3:34:11",
+            "location": [
+              6.6377689,
+              46.5195935
+            ],
+            "duration": "2:33:11",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:36:20",
+            "type": "end",
+            "arrival": "3:58:20"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:22:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        11
+      ],
+      "computing_times": {
+        "solving": 17,
+        "loading": 7
+      },
+      "duration": "2:36:20",
+      "cost": "2:36:20"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 49720
+      },
+      {
+        "id": 1011666
+      },
+      {
+        "id": 48204
+      },
+      {
+        "id": 50149
+      },
+      {
+        "id": 50026
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:18:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          11
+        ],
+        "vehicle": 601,
+        "duration": "2:37:39",
+        "cost": "2:37:39",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:03:50",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:51:50",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:31:03",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:55:03",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "0:46:32",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "0:59:32",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "1:33:59",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:42:59",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:21:42",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:22:42",
+            "type": "job"
+          },
+          {
+            "service": "0:05:00",
+            "job": 1007372,
+            "waiting_time": "0:00:00",
+            "arrival": "2:45:12",
+            "location": [
+              6.626075,
+              46.521271
+            ],
+            "duration": "2:29:12",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "2:51:41",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:30:41",
+            "type": "job"
+          },
+          {
+            "service": "0:20:00",
+            "job": 1009318,
+            "waiting_time": "0:00:00",
+            "arrival": "3:07:45",
+            "location": [
+              6.6316961,
+              46.5205435
+            ],
+            "duration": "2:31:45",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:29:36",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:33:36",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:42:24",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:34:24",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:37:39",
+            "type": "end",
+            "arrival": "3:55:39"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:18:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        11
+      ],
+      "computing_times": {
+        "solving": 25,
+        "loading": 7
+      },
+      "duration": "2:37:39",
+      "cost": "2:37:39"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 1011666
+      },
+      {
+        "id": 1007372
+      },
+      {
+        "id": 50149
+      },
+      {
+        "id": 50026
+      },
+      {
+        "id": 48204
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:17:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          11
+        ],
+        "vehicle": 601,
+        "duration": "2:38:07",
+        "cost": "2:38:07",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 49720,
+            "waiting_time": "0:00:00",
+            "arrival": "0:01:26",
+            "location": [
+              6.6477127,
+              46.6861255
+            ],
+            "duration": "0:49:26",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:09:39",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:53:39",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:36:52",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:56:52",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "0:52:21",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "1:01:21",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "1:39:48",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:44:48",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:27:31",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:24:31",
+            "type": "job"
+          },
+          {
+            "service": "0:20:00",
+            "job": 1009318,
+            "waiting_time": "0:00:00",
+            "arrival": "2:50:40",
+            "location": [
+              6.6316961,
+              46.5205435
+            ],
+            "duration": "2:30:40",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "3:12:05",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:32:05",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:29:04",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:34:04",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:41:52",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:34:52",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:38:07",
+            "type": "end",
+            "arrival": "3:55:07"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:17:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        11
+      ],
+      "computing_times": {
+        "solving": 20,
+        "loading": 7
+      },
+      "duration": "2:38:07",
+      "cost": "2:38:07"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 49720
+      },
+      {
+        "id": 1011666
+      },
+      {
+        "id": 48204
+      },
+      {
+        "id": 50149
+      },
+      {
+        "id": 1009318
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:14:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          11
+        ],
+        "vehicle": 601,
+        "duration": "2:40:40",
+        "cost": "2:40:40",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:16:00",
+            "job": 50026,
+            "waiting_time": "0:00:00",
+            "arrival": "23:59:09",
+            "location": [
+              6.6844064,
+              46.6272983
+            ],
+            "duration": "0:47:09",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:20:58",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:52:58",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:35:12",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:56:12",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "1:06:29",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "1:03:29",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "1:53:56",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:46:56",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:41:39",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:26:39",
+            "type": "job"
+          },
+          {
+            "service": "0:05:00",
+            "job": 1007372,
+            "waiting_time": "0:00:00",
+            "arrival": "3:05:09",
+            "location": [
+              6.626075,
+              46.521271
+            ],
+            "duration": "2:33:09",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "3:11:38",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:34:38",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:28:37",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:36:37",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:41:25",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:37:25",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:40:40",
+            "type": "end",
+            "arrival": "3:54:40"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:14:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        11
+      ],
+      "computing_times": {
+        "solving": 20,
+        "loading": 7
+      },
+      "duration": "2:40:40",
+      "cost": "2:40:40"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 1011666
+      },
+      {
+        "id": 1007372
+      },
+      {
+        "id": 50149
+      },
+      {
+        "id": 1009318
+      },
+      {
+        "id": 48204
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:13:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          11
+        ],
+        "vehicle": 601,
+        "duration": "2:46:27",
+        "cost": "2:46:27",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:16:00",
+            "job": 50026,
+            "waiting_time": "0:00:00",
+            "arrival": "23:59:09",
+            "location": [
+              6.6844064,
+              46.6272983
+            ],
+            "duration": "0:47:09",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:20:58",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:52:58",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 49720,
+            "waiting_time": "0:00:00",
+            "arrival": "0:38:05",
+            "location": [
+              6.6477127,
+              46.6861255
+            ],
+            "duration": "0:59:05",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:46:18",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "1:03:18",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "1:17:35",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "1:10:35",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "2:05:02",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:54:02",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:52:45",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:33:45",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "3:16:25",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:40:25",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:33:24",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:42:24",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:46:12",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:43:12",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:46:27",
+            "type": "end",
+            "arrival": "3:59:27"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:13:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        11
+      ],
+      "computing_times": {
+        "solving": 19,
+        "loading": 7
+      },
+      "duration": "2:46:27",
+      "cost": "2:46:27"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 49720
+      },
+      {
+        "id": 1011666
+      },
+      {
+        "id": 50149
+      },
+      {
+        "id": 1009318
+      },
+      {
+        "id": 50026
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:19:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          11
+        ],
+        "vehicle": 601,
+        "duration": "2:36:44",
+        "cost": "2:36:44",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:03:50",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:51:50",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:31:03",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:55:03",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "0:46:32",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "0:59:32",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "1:33:59",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:42:59",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:21:42",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:22:42",
+            "type": "job"
+          },
+          {
+            "service": "0:05:00",
+            "job": 1007372,
+            "waiting_time": "0:00:00",
+            "arrival": "2:45:12",
+            "location": [
+              6.626075,
+              46.521271
+            ],
+            "duration": "2:29:12",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "2:51:41",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:30:41",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:08:40",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:32:40",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:21:28",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:33:28",
+            "type": "job"
+          },
+          {
+            "service": "0:21:00",
+            "job": 48204,
+            "waiting_time": "0:00:00",
+            "arrival": "3:31:35",
+            "location": [
+              6.6377689,
+              46.5195935
+            ],
+            "duration": "2:33:35",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:36:44",
+            "type": "end",
+            "arrival": "3:55:44"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:19:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        11
+      ],
+      "computing_times": {
+        "solving": 28,
+        "loading": 7
+      },
+      "duration": "2:36:44",
+      "cost": "2:36:44"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 1011666
+      },
+      {
+        "id": 1007372
+      },
+      {
+        "id": 50149
+      },
+      {
+        "id": 1009318
+      },
+      {
+        "id": 50026
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:18:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          11
+        ],
+        "vehicle": 601,
+        "duration": "2:37:14",
+        "cost": "2:37:14",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 49720,
+            "waiting_time": "0:00:00",
+            "arrival": "0:01:26",
+            "location": [
+              6.6477127,
+              46.6861255
+            ],
+            "duration": "0:49:26",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:09:39",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:53:39",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:36:52",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:56:52",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "0:52:21",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "1:01:21",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "1:39:48",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:44:48",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:27:31",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:24:31",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "2:51:11",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:31:11",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:08:10",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:33:10",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:20:58",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:33:58",
+            "type": "job"
+          },
+          {
+            "service": "0:21:00",
+            "job": 48204,
+            "waiting_time": "0:00:00",
+            "arrival": "3:31:05",
+            "location": [
+              6.6377689,
+              46.5195935
+            ],
+            "duration": "2:34:05",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:37:14",
+            "type": "end",
+            "arrival": "3:55:14"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:18:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        11
+      ],
+      "computing_times": {
+        "solving": 20,
+        "loading": 7
+      },
+      "duration": "2:37:14",
+      "cost": "2:37:14"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 49720
+      },
+      {
+        "id": 50026
+      },
+      {
+        "id": 48204
+      },
+      {
+        "id": 1009318
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:20:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          12
+        ],
+        "vehicle": 601,
+        "duration": "2:39:52",
+        "cost": "2:39:52",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 50149,
+            "waiting_time": "0:00:00",
+            "arrival": "23:41:03",
+            "location": [
+              6.798389,
+              46.669465
+            ],
+            "duration": "0:29:03",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:12:45",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:52:45",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:39:58",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:55:58",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "0:55:27",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "1:00:27",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "1:42:54",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:43:54",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:30:37",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:23:37",
+            "type": "job"
+          },
+          {
+            "service": "0:05:00",
+            "job": 1007372,
+            "waiting_time": "0:00:00",
+            "arrival": "2:54:07",
+            "location": [
+              6.626075,
+              46.521271
+            ],
+            "duration": "2:30:07",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "3:00:36",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:31:36",
+            "type": "job"
+          },
+          {
+            "service": "0:14:00",
+            "job": 1011666,
+            "waiting_time": "0:00:00",
+            "arrival": "3:17:36",
+            "location": [
+              6.6368735,
+              46.5223642
+            ],
+            "duration": "2:33:36",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:33:27",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:35:27",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:44:15",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:36:15",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:39:52",
+            "type": "end",
+            "arrival": "3:59:52"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:20:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        12
+      ],
+      "computing_times": {
+        "solving": 18,
+        "loading": 7
+      },
+      "duration": "2:39:52",
+      "cost": "2:39:52"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 1011666
+      },
+      {
+        "id": 48204
+      },
+      {
+        "id": 1009318
+      },
+      {
+        "id": 50026
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:10:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          12
+        ],
+        "vehicle": 601,
+        "duration": "2:39:26",
+        "cost": "2:39:26",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 50149,
+            "waiting_time": "0:00:00",
+            "arrival": "23:41:03",
+            "location": [
+              6.798389,
+              46.669465
+            ],
+            "duration": "0:29:03",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 49720,
+            "waiting_time": "0:00:00",
+            "arrival": "0:10:20",
+            "location": [
+              6.6477127,
+              46.6861255
+            ],
+            "duration": "0:50:20",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:18:33",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:54:33",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:45:46",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:57:46",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "1:01:15",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "1:02:15",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "1:48:42",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:45:42",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:36:25",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:25:25",
+            "type": "job"
+          },
+          {
+            "service": "0:05:00",
+            "job": 1007372,
+            "waiting_time": "0:00:00",
+            "arrival": "2:59:55",
+            "location": [
+              6.626075,
+              46.521271
+            ],
+            "duration": "2:31:55",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "3:06:24",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:33:24",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:23:23",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:35:23",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:36:11",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:36:11",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:39:26",
+            "type": "end",
+            "arrival": "3:49:26"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:10:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        12
+      ],
+      "computing_times": {
+        "solving": 32,
+        "loading": 6
+      },
+      "duration": "2:39:26",
+      "cost": "2:39:26"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 50026
+      },
+      {
+        "id": 1007372
+      },
+      {
+        "id": 1009318
+      },
+      {
+        "id": 48204
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:19:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          12
+        ],
+        "vehicle": 601,
+        "duration": "2:40:21",
+        "cost": "2:40:21",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 50149,
+            "waiting_time": "0:00:00",
+            "arrival": "23:41:03",
+            "location": [
+              6.798389,
+              46.669465
+            ],
+            "duration": "0:29:03",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 49720,
+            "waiting_time": "0:00:00",
+            "arrival": "0:10:20",
+            "location": [
+              6.6477127,
+              46.6861255
+            ],
+            "duration": "0:50:20",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:18:33",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:54:33",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:45:46",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:57:46",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "1:01:15",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "1:02:15",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "1:48:42",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:45:42",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:36:25",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:25:25",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "3:00:05",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:32:05",
+            "type": "job"
+          },
+          {
+            "service": "0:14:00",
+            "job": 1011666,
+            "waiting_time": "0:00:00",
+            "arrival": "3:17:05",
+            "location": [
+              6.6368735,
+              46.5223642
+            ],
+            "duration": "2:34:05",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:32:56",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:35:56",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:43:44",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:36:44",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:40:21",
+            "type": "end",
+            "arrival": "3:59:21"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:19:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        12
+      ],
+      "computing_times": {
+        "solving": 21,
+        "loading": 7
+      },
+      "duration": "2:40:21",
+      "cost": "2:40:21"
+    }
+  },
+  {
+    "unassigned": [
+      {
+        "id": 50026
+      },
+      {
+        "id": 48204
+      },
+      {
+        "id": 50149
+      },
+      {
+        "id": 1009318
+      }
+    ],
+    "routes": [
+      {
+        "service": "2:16:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          12
+        ],
+        "vehicle": 601,
+        "duration": "2:40:46",
+        "cost": "2:40:46",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:12:00",
+            "job": 1008740,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:35",
+            "location": [
+              6.8010133,
+              46.6681697
+            ],
+            "duration": "0:27:35",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 49720,
+            "waiting_time": "0:00:00",
+            "arrival": "0:01:26",
+            "location": [
+              6.6477127,
+              46.6861255
+            ],
+            "duration": "0:49:26",
+            "type": "job"
+          },
+          {
+            "service": "0:24:00",
+            "job": 1010172,
+            "waiting_time": "0:00:00",
+            "arrival": "0:09:39",
+            "location": [
+              6.6390489,
+              46.65755
+            ],
+            "duration": "0:53:39",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "0:36:52",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:56:52",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "0:52:21",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "1:01:21",
+            "type": "job"
+          },
+          {
+            "service": "0:08:00",
+            "job": 1009612,
+            "waiting_time": "0:00:00",
+            "arrival": "1:39:48",
+            "location": [
+              6.258049,
+              46.5074987
+            ],
+            "duration": "1:44:48",
+            "type": "job"
+          },
+          {
+            "service": "0:17:00",
+            "job": 1009766,
+            "waiting_time": "0:00:00",
+            "arrival": "2:27:31",
+            "location": [
+              6.622466,
+              46.5077266
+            ],
+            "duration": "2:24:31",
+            "type": "job"
+          },
+          {
+            "service": "0:05:00",
+            "job": 1007372,
+            "waiting_time": "0:00:00",
+            "arrival": "2:51:01",
+            "location": [
+              6.626075,
+              46.521271
+            ],
+            "duration": "2:31:01",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "2:57:30",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "2:32:30",
+            "type": "job"
+          },
+          {
+            "service": "0:14:00",
+            "job": 1011666,
+            "waiting_time": "0:00:00",
+            "arrival": "3:14:30",
+            "location": [
+              6.6368735,
+              46.5223642
+            ],
+            "duration": "2:34:30",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "3:30:21",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "2:36:21",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "3:41:09",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "2:37:09",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "2:40:46",
+            "type": "end",
+            "arrival": "3:56:46"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "2:16:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        12
+      ],
+      "computing_times": {
+        "solving": 25,
+        "loading": 7
+      },
+      "duration": "2:40:46",
+      "cost": "2:40:46"
+    }
+  }
+]

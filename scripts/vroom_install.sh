@@ -13,5 +13,7 @@ unzip vroom.zip -d ./vroom
 rm vroom.zip
 cd vroom/vroom-1.4.0/src
 make
-
+cd $PATH_TO_EXEC
+mv vroom/vroom-1.4.0/bin/vroom ./vroom_exec
+rm -r vroom/
 #je devrais move les executable à la source et supprimer le reste

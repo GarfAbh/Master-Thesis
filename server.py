@@ -16,20 +16,17 @@ Use to run a flask API for TuxyRoad
 
 #standard lib
 import json
-import configparser
-from subprocess import Popen, PIPE
 #related third party import
 from flask import Flask, request, Response
 #local application/lib import
 from geocoder import util as gu
 from geocoder import geocoder
 from routing import util as ru
+from routing import time as t
+from routing import priority as prio
 
 APP = Flask(__name__)
 
-CONFIG = configparser.ConfigParser()
-CONFIG.read('config.ini')
-PATH_TO_EXEC = CONFIG['DEFAULT']['PATH_TO_EXEC']
 
 #curl -XPOST --header 'Content-Type:application/json'
 #--data @Geocoder/input_output/input3.json 127.0.0.1:5000/geocode
@@ -73,19 +70,16 @@ def vroom():
     """
     data = request.get_json()
     if ru.json_is_ok(data):
-        pop = Popen([PATH_TO_EXEC+'/vroom/vroom-1.4.0/bin/vroom',
-                     '-p 5001',
-                     json.dumps(data)],
-                    stdin=PIPE,
-                    stdout=PIPE)
-        output = pop.stdout.read()
+        vroom_otp = prio.handle_jobs_priority(data)
         response = APP.response_class(
-            response=output.decode("utf-8"),
+            response=json.dumps(vroom_otp),
             status=200,
             mimetype='application/json'
         )
         return response
     return Response("le json n'est pas formaté corectement\n", status=400)
 
+print("initialize db")
 geocoder.init_db()
+print("db initialized")
 APP.run()

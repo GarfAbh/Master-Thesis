@@ -31,9 +31,6 @@ rm master.zip
 mv switzerland-geojson-master/country/switzerland.geojson ./switzerland.geojson
 rm -r switzerland-geojson-master
 wget http://download.geofabrik.de/europe/switzerland-latest.osm.pbf
-wget http://download.geofabrik.de/europe/switzerland-latest.osm.pbf
-$PATH_TO_EXEC/osrm/osrm-backend-5.22.0/build/osrm-extract ./switzerland-latest.osm.pbf \
--p $PATH_TO_EXEC/osrm/osrm-backend-5.22.0/profiles/car.lua --location-dependent-data=switzerland.geojson
-$PATH_TO_EXEC/osrm/osrm-backend-5.22.0/build/osrm-partition $PATH_TO_DATA/OSRM/switzerland/switzerland-latest.osrm
-$PATH_TO_EXEC/osrm/osrm-backend-5.22.0/build/osrm-customize $PATH_TO_DATA/OSRM/switzerland/switzerland-latest.osrm
+$PATH_TO_EXEC/osrm-extract ./switzerland-latest.osm.pbf \
+-p $PATH_TO_EXEC/profiles/car.lua --location-dependent-data=switzerland.geojson
 rm switzerland-latest.osm.pbf

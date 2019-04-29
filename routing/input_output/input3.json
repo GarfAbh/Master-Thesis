@@ -62,7 +62,7 @@
       "amount": [
         1
       ],
-      "priority": 1,
+      "priority": 2,
       "location": [
         6.258049,
         46.5074987
@@ -74,7 +74,7 @@
       "amount": [
         1
       ],
-      "priority": 1,
+      "priority": 2,
       "location": [
         6.6844064,
         46.6272983
@@ -110,7 +110,7 @@
       "amount": [
         1
       ],
-      "priority": 1,
+      "priority": 2,
       "location": [
         6.6390489,
         46.65755
@@ -134,7 +134,7 @@
       "amount": [
         1
       ],
-      "priority": 1,
+      "priority": 2,
       "location": [
         6.798389,
         46.669465
@@ -146,7 +146,7 @@
       "amount": [
         1
       ],
-      "priority": 1,
+      "priority": 2,
       "location": [
         6.8010133,
         46.6681697
@@ -206,7 +206,7 @@
       "amount": [
         1
       ],
-      "priority": 1,
+      "priority": 2,
       "location": [
         6.622466,
         46.5077266

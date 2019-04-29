@@ -1,0 +1,172 @@
+[
+  {
+    "unassigned": [],
+    "routes": [
+      {
+        "service": "1:56:00",
+        "waiting_time": "0:00:00",
+        "amount": [
+          10
+        ],
+        "vehicle": 601,
+        "duration": "1:03:29",
+        "cost": "1:03:29",
+        "steps": [
+          {
+            "location": [
+              6.68973,
+              46.5019
+            ],
+            "duration": "0:00:00",
+            "type": "start",
+            "arrival": "23:00:00"
+          },
+          {
+            "service": "0:04:00",
+            "job": 1010011,
+            "waiting_time": "0:00:00",
+            "arrival": "23:19:19",
+            "location": [
+              6.6225555,
+              46.6119125
+            ],
+            "duration": "0:19:19",
+            "type": "job"
+          },
+          {
+            "service": "0:11:00",
+            "job": 47754,
+            "waiting_time": "0:00:00",
+            "arrival": "23:27:37",
+            "location": [
+              6.636608,
+              46.6408789
+            ],
+            "duration": "0:23:37",
+            "type": "job"
+          },
+          {
+            "service": "0:04:00",
+            "job": 49720,
+            "waiting_time": "0:00:00",
+            "arrival": "23:44:44",
+            "location": [
+              6.6477127,
+              46.6861255
+            ],
+            "duration": "0:29:44",
+            "type": "job"
+          },
+          {
+            "service": "0:14:00",
+            "job": 1011666,
+            "waiting_time": "0:00:00",
+            "arrival": "0:12:39",
+            "location": [
+              6.6368735,
+              46.5223642
+            ],
+            "duration": "0:53:39",
+            "type": "job"
+          },
+          {
+            "service": "0:20:00",
+            "job": 1009318,
+            "waiting_time": "0:00:00",
+            "arrival": "0:27:35",
+            "location": [
+              6.6316961,
+              46.5205435
+            ],
+            "duration": "0:54:35",
+            "type": "job"
+          },
+          {
+            "service": "0:05:00",
+            "job": 1007372,
+            "waiting_time": "0:00:00",
+            "arrival": "0:48:57",
+            "location": [
+              6.626075,
+              46.521271
+            ],
+            "duration": "0:55:57",
+            "type": "job"
+          },
+          {
+            "service": "0:15:00",
+            "job": 48222,
+            "waiting_time": "0:00:00",
+            "arrival": "0:55:26",
+            "location": [
+              6.627166,
+              46.521866
+            ],
+            "duration": "0:57:26",
+            "type": "job"
+          },
+          {
+            "service": "0:12:00",
+            "job": 48968,
+            "waiting_time": "0:00:00",
+            "arrival": "1:12:25",
+            "location": [
+              6.631371,
+              46.51953
+            ],
+            "duration": "0:59:25",
+            "type": "job"
+          },
+          {
+            "service": "0:10:00",
+            "job": 1009435,
+            "waiting_time": "0:00:00",
+            "arrival": "1:25:13",
+            "location": [
+              6.6370222,
+              46.5192317
+            ],
+            "duration": "1:00:13",
+            "type": "job"
+          },
+          {
+            "service": "0:21:00",
+            "job": 48204,
+            "waiting_time": "0:00:00",
+            "arrival": "1:35:20",
+            "location": [
+              6.6377689,
+              46.5195935
+            ],
+            "duration": "1:00:20",
+            "type": "job"
+          },
+          {
+            "location": [
+              6.64357,
+              46.5091
+            ],
+            "duration": "1:03:29",
+            "type": "end",
+            "arrival": "1:59:29"
+          }
+        ]
+      }
+    ],
+    "code": 0,
+    "summary": {
+      "unassigned": 0,
+      "service": "1:56:00",
+      "waiting_time": "0:00:00",
+      "amount": [
+        10
+      ],
+      "computing_times": {
+        "solving": 12,
+        "loading": 5
+      },
+      "duration": "1:03:29",
+      "cost": "1:03:29"
+    }
+  }
+]

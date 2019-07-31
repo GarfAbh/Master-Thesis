@@ -1,62 +1,42 @@
 [
-    {
-        "coordinate": {
-            "latitude": "46.50917676458269",
-            "longitude": "6.66808110921284"
-        },
-        "ID": "1",
-        "matched_addr": "Avenue de Lavaux 95, 1009 Pully",
-        "matching": 81,
-        "input": "Avenue C-F Ramuz 95, 1009 Pully"
+  {
+    "coordinate": {
+      "longitude": "6.66808110921284",
+      "latitude": "46.50917676458269"
     },
-    {
-        "coordinate": {
-            "latitude": "47.37001910671118",
-            "longitude": "8.53715272742657"
-        },
-        "ID": "2",
-        "matched_addr": "B\u00e4rengasse 16, 8001 Z\u00fcrich",
-        "matching": 100,
-        "input": "B\u00e4rengasse 16, 8001 Z\u00fcrich"
+    "matching": 81,
+    "ID": "1",
+    "input": "Avenue C-F Ramuz 95, 1009 Pully",
+    "matched_addr": "Avenue de Lavaux 95, 1009 Pully"
+  },
+  {
+    "coordinate": {
+      "longitude": "8.53715272742657",
+      "latitude": "47.37001910671118"
     },
-    {
-        "coordinate": {
-            "latitude": "47.37001910671118",
-            "longitude": "8.53715272742657"
-        },
-        "ID": "3",
-        "matched_addr": "B\u00e4rengasse 16, 8001 Z\u00fcrich",
-        "matching": 100,
-        "input": "B\u00e4rengasse 16, 8001 Z\u00fcrich"
+    "matching": 100,
+    "ID": "2",
+    "input": "Bärengasse 16, 8001 Zürich",
+    "matched_addr": "Bärengasse 16, 8001 Zürich"
+  },
+  {
+    "coordinate": {
+      "longitude": "7.454556762130417",
+      "latitude": "46.946512897791365"
     },
-    {
-        "coordinate": {
-            "latitude": "46.50917676458269",
-            "longitude": "6.66808110921284"
-        },
-        "ID": "4",
-        "matched_addr": "Avenue de Lavaux 95, 1009 Pully",
-        "matching": 81,
-        "input": "Avenue C-F Ramuz 95, 1009 Pully"
+    "matching": 100,
+    "ID": "3",
+    "input": "Schifflaube 16, 3011 Bern",
+    "matched_addr": "Schifflaube 16, 3011 Bern"
+  },
+  {
+    "coordinate": {
+      "longitude": "7.584408132428209",
+      "latitude": "47.55722140736499"
     },
-    {
-        "coordinate": {
-            "latitude": "46.946512897791365",
-            "longitude": "7.454556762130417"
-        },
-        "ID": "5",
-        "matched_addr": "Schifflaube 16, 3011 Bern",
-        "matching": 100,
-        "input": "Schifflaube 16, 3011 Bern"
-    },
-    {
-        "coordinate": {
-            "latitude": "46.946512897791365",
-            "longitude": "7.454556762130417"
-        },
-        "ID": "6",
-        "matched_addr": "Schifflaube 16, 3011 Bern",
-        "matching": 100,
-        "input": "Schifflaube 16, 3011 Bern"
-    }
+    "matching": 100,
+    "ID": "4",
+    "input": "Petersgraben 71, 4051 Basel",
+    "matched_addr": "Petersgraben 71, 4051 Basel"
+  }
 ]

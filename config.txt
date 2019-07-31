@@ -1,4 +1,3 @@
 PATH_TO_DATA=/home/arnaud/data
 PATH_TO_EXEC=/home/arnaud/exec
-PATH_TO_DATA=/home/arnaud/data
-PATH_TO_EXEC=/home/arnaud/exec
+OSRM_PORT=5001

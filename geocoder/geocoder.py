@@ -84,7 +84,7 @@ def find_match(addr: str, postal_code: str) -> Match:
     best = 0
     best_match = ()
     if DB[DB['PLZ4'] == int(postal_code)].empty:
-        best_match = ("code postal non trouvé", 0, (0, 0))
+        best_match = ("code postal non trouve", 0, (0, 0))
     else:
         for row in DB[DB['PLZ4'] == int(postal_code)].iterrows():
             addr_tmp = row[1]['STRNAME'] + " " + str(row[1]['DEINR']) + ", " +\

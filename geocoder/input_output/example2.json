@@ -16,5 +16,11 @@
     "rue":"Schifflaube 16",
     "NPA":"3011",
     "ville":"Bern"
+  },
+  {
+    "ID":"4",
+    "rue":"Petersgraben 71",
+    "NPA": "4051",
+    "ville": "Basel"
   }
 ]

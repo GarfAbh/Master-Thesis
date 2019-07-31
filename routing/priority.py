@@ -42,7 +42,8 @@ def job_sort_priority(vehics_jobs: Dict) -> NamedTuple:
           "service" : 720,
           "amount" : [1],
           "priority" : 1,
-          "location" : [6.631371,46.51953]
+          "location" : [6.631371,46.51953],
+          "time_windows" : [[21600,31200]]
         }]
     })
 
@@ -86,16 +87,17 @@ def add_job(vehics_jobs: Dict, job: Dict) -> Dict:
           "service" : 720,
           "amount" : [1],
           "priority" : 1,
-          "location" : [6.631371,46.51953]
+          "location" : [6.631371,46.51953],
+          "time_windows" : [[21600,31200]]
+        },
+        {
+          "id": 12458,
+          "service" : 720,
+          "amount" : [1],
+          "priority" : 2,
+          "location" : [6.631371,46.51953],
+          "time_windows" : [[26600,31200]]
         }]
-    }),
-    {
-      "id": 12458,
-      "service" : 720,
-      "amount" : [1],
-      "priority" : 2,
-      "location" : [6.631371,46.51953]
-    }
 
     """
     jobs_list = vehics_jobs['jobs'].copy()

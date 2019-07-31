@@ -26,16 +26,22 @@ def correct_in_time(vehics_jobs: Dict) -> Dict:
     for vehic in enumerate(vehics_jobs['vehicles']):
         start = string_to_sec(vehic[1]['time_window'][0])
         end = string_to_sec(vehic[1]['time_window'][1])
+        vehic[1]['time_window'][0] = start
+        vehic[1]['time_window'][1] = end
         if end < start:
             vehic[1]['time_window'][1] = end + DAY_IN_SEC
-        vehic[1]['time_window'][0] = start
+
 
     for job in enumerate(vehics_jobs['jobs']):
-        if 'time_window' in job[1].keys():
-            start = job[1]['time_window'][0]
-            end =job[1]['time_window'][1]
-            if end < sart:
-                job[1]['time_window'][1] = end + DAY_IN_SEC
+        if 'time_windows' in job[1].keys():
+            for i, tw in enumerate(job[1]['time_windows']):
+                start = string_to_sec(job[1]['time_windows'][i][0])
+                end = string_to_sec(job[1]['time_windows'][i][1])
+                job[1]['time_windows'][i][0] = start
+                job[1]['time_windows'][i][1] = end
+                if end < start:
+                    job[1]['time_windows'][i][1] = end + DAY_IN_SEC
+
         job[1]['service'] = string_to_sec(job[1]['service'])
     return vehics_jobs
 

@@ -25,7 +25,8 @@ Use to get some usefull fonction for the routing as a json verifier
       "service" : 720,
       "amount" : [1],
       "priority" : 1,
-      "location" : [6.631371,46.51953]
+      "location" : [6.631371,46.51953],
+      "time_windows" : [[21600,31200]]
     }]
 })
 """
@@ -66,7 +67,8 @@ def json_is_ok(vehics_jobs: Dict) -> bool:
           "service" : 720,
           "amount" : [1],
           "priority" : 1,
-          "location" : [6.631371,46.51953]
+          "location" : [6.631371,46.51953],
+          "time_windows" : [[21600,31200]]
         }]
     })
     """
@@ -112,13 +114,13 @@ def send_to_vroom(vehics_jobs: Dict) -> Dict:
           "service" : 720,
           "amount" : [1],
           "priority" : 1,
-          "location" : [6.631371,46.51953]
+          "location" : [6.631371,46.51953],
+          "time_windows" : [[21600,31200]]
         }]
     })
 
     """
     pop = Popen([PATH_TO_EXEC+'/vroom_exec',
-                 '-p '+OSRM_PORT,
                  json.dumps(vehics_jobs)],
                 stdin=PIPE,
                 stdout=PIPE)
